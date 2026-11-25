@@ -1,0 +1,17 @@
+:root {
+  /* 设计令牌位置（严格对齐 docs/PRD.md §5.2，精确色号待校准后统一填入，严禁页面硬编码色值） */
+
+  /* 1. 森系画布与卡片：--bg-canvas, --bg-surface, --bg-surface-translucent, --bg-wood-deep, --bg-moss-soft, --bg-scrim */
+
+  /* 2. 文字与木纹边框：--text-primary, --text-secondary, --text-muted, --text-on-wood, --border-soft, --border-wood */
+
+  /* 3. 灯火、光尘与状态：--accent-lantern, --accent-sunbeam, --accent-wax, --state-safe-bg, --state-safe-text, --state-midnight-tint */
+
+  /* 4. 8 角色 UI 单一主色（及配套浅底 --role-*-soft）：
+     --role-pineapple, --role-strawberry, --role-pomelo, --role-bergamot,
+     --role-peach, --role-grape, --role-apple, --role-sugarapple */
+
+  /* 5. 圆角与暖色阴影：--radius-sm, --radius-md, --radius-lg, --radius-pill, --shadow-card, --shadow-float, --shadow-modal, --glow-lantern */
+
+  /* 6. 排版、间距、动效与层级：--font-display, --font-body, --text-hero ~ --text-caption, --space-1 ~ --space-8, --container-max, --ease-gentle, --dur-fast, --dur-base, --dur-portal, --dur-stamp, --z-nav ~ --z-modal */
+}
