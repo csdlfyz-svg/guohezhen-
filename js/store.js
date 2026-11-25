@@ -104,8 +104,16 @@ export function getCssToken(tokenName) {
   return getComputedStyle(document.documentElement).getPropertyValue(tokenName).trim();
 }
 
+const CUSTOM_ROOM_URLS = {
+  bergamot: './characters/foxiaogan/index.html'
+};
+
+export function getCustomRoomUrl(roleId) {
+  return CUSTOM_ROOM_URLS[roleId] || null;
+}
+
 export function getRoomUrl(roleId) {
-  return `./room.html?role=${encodeURIComponent(roleId)}`;
+  return CUSTOM_ROOM_URLS[roleId] || `./room.html?role=${encodeURIComponent(roleId)}`;
 }
 
 export function dispatchAction(name, detail = {}) {

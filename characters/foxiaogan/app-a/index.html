@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#F5BE3F" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="佛手喝茶记" />
+  <title>佛手喝茶记 · 불수 차일기</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" href="../assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="../assets/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <a href="../index.html" class="icon-btn back-link" id="backLink" data-i18n-aria="backRoom" aria-label="返回我的房间">
+        <span aria-hidden="true">←</span>
+        <span data-i18n="backRoom">我的房间</span>
+      </a>
+      <div class="top-actions">
+        <button type="button" class="icon-pill" id="soundToggle" data-i18n-aria="ariaSound" aria-label="音效开关">🔊</button>
+        <button type="button" class="pill-btn hidden" id="installBtn" data-i18n="installPwa">安装主屏</button>
+        <button type="button" class="pill-btn lang-btn" id="langToggle" data-i18n-aria="ariaLang" aria-label="切换韩语/中文">한국어</button>
+      </div>
+    </header>
+
+    <!-- Title & Date Strip -->
+    <section class="hero-header">
+      <div>
+        <h1 class="app-title" data-i18n="appTitle">佛手喝茶记</h1>
+        <p class="app-subtitle" data-i18n="appSubtitle">每天 8 杯温茶，陪佛小柑慢慢水润起来</p>
+      </div>
+      <div class="date-badge" id="todayDateBadge"></div>
+    </section>
+
+    <!-- Main Character Stage Card (with animated dual-layer SVG tea wave!) -->
+    <main class="stage-card" id="stageCard">
+      <div class="tea-wave-wrap is-empty" id="teaWaveWrap" aria-hidden="true">
+        <div class="tea-fill" id="teaFill" style="height: 0%">
+          <svg class="wave-svg wave-back" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,24 C200,56 400,-4 600,26 C800,56 1000,-4 1200,24 L1200,60 L0,60 Z" />
+          </svg>
+          <svg class="wave-svg wave-front" viewBox="0 0 1200 60" preserveAspectRatio="none">
+            <path d="M0,30 C180,2 420,56 600,28 C780,0 1020,56 1200,30 L1200,60 L0,60 Z" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Speech Bubble -->
+      <div class="speech-bubble" id="speechBubble" role="status" aria-live="polite">
+        <span id="speechText"></span>
+      </div>
+
+      <!-- Character Sprite + Steam + Star Particles -->
+      <div class="character-stage" id="characterStage">
+        <div class="steam-wisps" aria-hidden="true">
+          <span class="wisp w1"></span>
+          <span class="wisp w2"></span>
+          <span class="wisp w3"></span>
+        </div>
+        <div class="star-burst" id="starBurst" aria-hidden="true">
+          <span class="star s1">✦</span>
+          <span class="star s2">★</span>
+          <span class="star s3">✦</span>
+          <span class="star s4">★</span>
+          <span class="star s5">✦</span>
+          <span class="star s6">★</span>
+          <span class="star s7">✦</span>
+          <span class="star s8">★</span>
+        </div>
+        <button type="button" class="char-tap-btn" id="charTapBtn" data-i18n-aria="ariaPat" aria-label="轻拍佛小柑">
+          <img
+            id="characterImg"
+            class="character-img"
+            src="../assets/expressions/base.png"
+            alt="佛小柑"
+            width="165"
+            height="220"
+          />
+        </button>
+        <span class="hydration-pill" id="hydrationPill"></span>
+      </div>
+
+      <!-- Cup Progress -->
+      <div class="cup-meter">
+        <div class="cup-count-row">
+          <strong class="cup-big"><span id="cupCount">0</span><span class="cup-goal"> / 8</span></strong>
+          <span class="cup-unit" data-i18n="cupsUnit">杯温茶</span>
+        </div>
+        <div class="cup-dots" id="cupDots" aria-hidden="true"></div>
+      </div>
+
+      <!-- Empty State First-Step CTA OR Quick Flavor Chips + Action Controls -->
+      <div class="action-zone" id="actionZone">
+        <div class="flavor-row" id="flavorRow" role="group" aria-label="快捷饮品标签"></div>
+        <div class="note-row" id="noteRow">
+          <input
+            type="text"
+            id="noteInput"
+            class="note-input"
+            maxlength="60"
+            autocomplete="off"
+            data-i18n-placeholder="notePlaceholder"
+            placeholder="可选：记一句此刻心情或茶名（60字内）"
+          />
+        </div>
+        <div class="btn-row">
+          <button type="button" class="primary-btn" id="addCupBtn">
+            <span class="btn-emoji" aria-hidden="true">🍵</span>
+            <span id="addCupLabel" data-i18n="drinkOneBtn">+1 杯温茶</span>
+          </button>
+          <button type="button" class="secondary-btn hidden" id="minusCupBtn" data-i18n="minusOneBtn" aria-label="减一杯">-1</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- Light Gamification Stats -->
+    <section class="stats-grid" aria-label="统计与等级">
+      <div class="stat-card">
+        <span class="stat-label" data-i18n="streakLabel">连续陪伴</span>
+        <strong class="stat-value"><span id="streakNum">0</span> <small data-i18n="daysUnit">天</small></strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label" data-i18n="levelLabel">茶香等级</span>
+        <strong class="stat-value" id="levelName">Lv.1 新芽</strong>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label" data-i18n="totalLabel">累计喝茶</span>
+        <strong class="stat-value"><span id="totalCupsNum">0</span> <small data-i18n="cupsShort">杯</small></strong>
+      </div>
+    </section>
+
+    <!-- Tea Prop Collection Box (Interactive!) -->
+    <section class="panel-card">
+      <div class="panel-head">
+        <h2 class="panel-title" data-i18n="collectionTitle">茶席收藏箱</h2>
+        <span class="panel-hint" id="collectionCount">0 / 6</span>
+      </div>
+      <p class="panel-desc" data-i18n="collectionDesc">每天喝满 8 杯解锁 1 件茶席小物，点击已解锁道具可听佛小柑悄悄话</p>
+      <div class="props-grid" id="propsGrid"></div>
+    </section>
+
+    <!-- History Card: 7-Day Chart + Monthly Tea Calendar Toggle -->
+    <section class="panel-card">
+      <div class="panel-head">
+        <div class="history-tabs" role="tablist">
+          <button type="button" class="h-tab active" id="tabWeekBtn" role="tab" aria-selected="true" data-i18n="weekTitle">近 7 天</button>
+          <button type="button" class="h-tab" id="tabMonthBtn" role="tab" aria-selected="false" data-i18n="monthTitle">本月茶历</button>
+        </div>
+        <button type="button" class="text-btn" id="saveCardBtn" data-i18n="saveCardBtn">存结果图</button>
+      </div>
+
+      <!-- 7-Day Bar Chart -->
+      <div class="week-chart" id="weekChart" aria-label="最近7天饮茶记录"></div>
+
+      <!-- Monthly Calendar Stamp View -->
+      <div class="month-cal-wrap hidden" id="monthCalWrap">
+        <div class="cal-header">
+          <span class="cal-month-label" id="calMonthLabel"></span>
+          <span class="cal-legend" data-i18n="calLegend">🍵 打卡 · ⭐ 满8杯</span>
+        </div>
+        <div class="cal-weekdays" id="calWeekdays"></div>
+        <div class="cal-grid" id="calGrid"></div>
+      </div>
+
+      <!-- Selected Day's Sip Log -->
+      <div class="today-log-wrap" id="todayLogWrap">
+        <div class="log-heading-row">
+          <h3 class="sub-heading" id="logHeading" data-i18n="todayLogTitle">今日记录</h3>
+          <button type="button" class="mini-reset-btn hidden" id="backTodayLogBtn" data-i18n="backToday">回今天</button>
+        </div>
+        <ul class="today-log-list" id="todayLogList"></ul>
+      </div>
+    </section>
+
+    <!-- Footer Privacy Notice -->
+    <footer class="app-footer">
+      <p class="privacy-note" data-i18n="privacyNote">🔒 记录只保存在这台手机里</p>
+      <button type="button" class="ghost-link" id="replayIntroBtn" data-i18n="replayIntro">重看佛小柑自我介绍</button>
+    </footer>
+  </div>
+
+  <!-- 3-Card First-Visit Onboarding Modal -->
+  <div class="modal-backdrop hidden" id="introModal" role="dialog" aria-modal="true" aria-labelledby="introTitle">
+    <div class="modal-card">
+      <div class="intro-dots" id="introDots" aria-hidden="true">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+      <div class="intro-visual">
+        <img id="introImg" src="../assets/expressions/surprised.png" alt="佛小柑" width="132" height="176" />
+      </div>
+      <h2 class="intro-title" id="introTitle"></h2>
+      <p class="intro-body" id="introBody"></p>
+      <div class="intro-actions">
+        <button type="button" class="secondary-btn" id="introPrevBtn" data-i18n="prevCard">上一张</button>
+        <button type="button" class="primary-btn" id="introNextBtn" data-i18n="nextCard">下一张</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="佛小柑的房间" />
+  <title>佛小柑 · 风车茶坡 | 果核镇</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" href="./assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="room-shell">
+    <!-- Top Floating Bar -->
+    <header class="top-bar">
+      <div class="top-left">
+        <a href="../../index.html" class="town-back-btn" id="townBackLink" data-i18n-aria="ariaBackTown" aria-label="返回果核镇主页">
+          <span aria-hidden="true">←</span>
+          <span data-i18n="backTown">果核镇</span>
+        </a>
+        <div class="brand-chip">
+          <span class="brand-avatar">
+            <img src="./assets/icons/icon-192.png" alt="" width="34" height="34" />
+          </span>
+          <div class="brand-meta">
+            <span class="brand-name" data-i18n="roomTitle">佛小柑的房间</span>
+            <span class="brand-stronghold" data-i18n="strongholdName">风车茶坡</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="top-actions">
+        <a href="../../index.html?mailbox=bergamot#mailbox-portal" class="top-mail-btn" data-i18n="topMailboxBtn">✉️ 留一件小事</a>
+        <button type="button" class="pill-btn hidden" id="installBtn" data-i18n="installPwa">安装主屏</button>
+        <div class="fg-lang-switch" role="group" aria-label="语言切换">
+          <button type="button" class="fg-lang-switch__btn is-active" data-fg-lang="zh" aria-pressed="true">中</button>
+          <button type="button" class="fg-lang-switch__btn" data-fg-lang="ko" aria-pressed="false">한</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Cozy Sunlit Hero Stage -->
+    <section class="hero-card" id="heroCard">
+      <canvas class="hero-loop-canvas" id="heroLoopCanvas" width="960" height="320" aria-hidden="true"></canvas>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-left">
+        <div class="hero-pills-row">
+          <span class="time-pill" id="timeGreeting">☀️ 暖阳茶香</span>
+          <span class="hero-trait-pill" data-i18n="heroBadge">🍃 风车茶坡 · 佛系</span>
+        </div>
+        <h1 class="hero-title" data-i18n="heroTitle">把佛小柑放进你的一天</h1>
+        <div class="hero-speech" id="heroSpeech" role="status" aria-live="polite"></div>
+
+        <div class="hero-actions">
+          <button type="button" class="hero-btn-primary" id="heroPatActionBtn" data-i18n="heroPatBtn">✦ 戳一戳拍拍</button>
+          <a href="../../index.html?mailbox=bergamot#mailbox-portal" class="hero-btn-ghost" data-i18n="heroMailboxBtn">✉️ 在风车茶坡留一件小事</a>
+        </div>
+      </div>
+
+      <button type="button" class="hero-char-btn" id="heroCharBtn" data-i18n-aria="ariaPatChar" aria-label="拍一拍佛小柑">
+        <span class="hero-halo" aria-hidden="true"></span>
+        <span class="pat-heart" id="patHeart" aria-hidden="true">💛</span>
+        <img id="heroChar" src="./assets/expressions/base.png" alt="佛小柑" width="152" height="196" />
+        <span class="hero-pedestal" aria-hidden="true"></span>
+        <span class="tap-hint" data-i18n="tapPat">点我互动</span>
+      </button>
+    </section>
+
+    <!-- Room Tabs (5 tabs: Profile, Stickers, Apps, Shorts, Comics) -->
+    <nav class="tab-bar" role="tablist" aria-label="房间标签">
+      <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-tab="profile" data-i18n="tabProfile">🍋 角色</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="stickers" data-i18n="tabStickers">😊 表情</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="apps" data-i18n="tabApps">📱 应用</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="shorts" data-i18n="tabShorts">🎬 视频</button>
+      <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="comics" data-i18n="tabComics">📖 漫画</button>
+    </nav>
+
+    <!-- Tab 1: Character Profile & Expressions (2-column bento on desktop) -->
+    <section class="tab-panel" id="panel-profile">
+      <div class="profile-bento">
+        <article class="profile-card">
+          <div class="profile-head">
+            <div>
+              <span class="profile-kicker" data-i18n="profileKicker">风车茶坡 · 佛手柑小茶灵</span>
+              <h2 class="section-title big" data-i18n="cardInfoTitle">佛小柑角色卡</h2>
+            </div>
+            <span class="profile-seal" aria-hidden="true">🍵</span>
+          </div>
+
+          <blockquote class="profile-motto" data-i18n="profileMotto">「慢慢来，先润润喉呀～喝杯不苦的好茶，就都好啦！」</blockquote>
+
+          <dl class="char-dl">
+            <div class="trait-row trait-row--quirk">
+              <span class="trait-icon" aria-hidden="true">🍃</span>
+              <div class="trait-copy">
+                <dt data-i18n="dtQuirk">奇怪的性质</dt>
+                <dd data-i18n="ddQuirk">在他身边会让人感到宁静</dd>
+              </div>
+            </div>
+            <div class="trait-row">
+              <span class="trait-icon" aria-hidden="true">✨</span>
+              <div class="trait-copy">
+                <dt data-i18n="dtPersonality">性格</dt>
+                <dd data-i18n="ddPersonality">温和治愈、慢节奏养生、绝不说教责怪人</dd>
+              </div>
+            </div>
+            <div class="trait-row">
+              <span class="trait-icon" aria-hidden="true">🫖</span>
+              <div class="trait-copy">
+                <dt data-i18n="dtProps">专属道具</dt>
+                <dd data-i18n="ddProps">绿叶透明温茶杯、金佛手干片、暖心白瓷壶</dd>
+              </div>
+            </div>
+            <div class="trait-row">
+              <span class="trait-icon" aria-hidden="true">🧊</span>
+              <div class="trait-copy">
+                <dt data-i18n="dtWeakness">弱点</dt>
+                <dd data-i18n="ddWeakness">怕冰块寒气、怕焦苦茶叶、久不喝水会干巴巴</dd>
+              </div>
+            </div>
+          </dl>
+
+          <!-- Quick Live Overview Strip linking to Apps -->
+          <div class="quick-status-strip">
+            <a href="./app-a/index.html" class="quick-pill-link">
+              <span class="q-emoji" aria-hidden="true">🍵</span>
+              <span class="q-label" id="quickStatA">今日 0 / 8 杯</span>
+              <span class="q-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="./app-b/index.html" class="quick-pill-link">
+              <span class="q-emoji" aria-hidden="true">🏆</span>
+              <span class="q-label" id="quickStatB">最高 0 分</span>
+              <span class="q-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="profile-card">
+          <h2 class="section-title" data-i18n="exprGalleryTitle">5 种反应表情状态（点击试听台词）</h2>
+          <div class="preview-bubble" id="previewBubble" data-i18n="previewDefault">点一点下面的表情，看看佛小柑会怎么回应你～</div>
+          <div class="expr-grid" id="exprGrid"></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tab 2: Stickers Tab (24 Transparent Expression Stickers + Full Sheet) -->
+    <section class="tab-panel hidden" id="panel-stickers">
+      <article class="sticker-card">
+        <div class="short-card-head">
+          <span class="badge-pill badge-a" data-i18n="stickerPackBadge">表情包 · 24 款</span>
+          <span class="ep-tag">PACK 01</span>
+        </div>
+        <h2 class="short-title" data-i18n="stickerPackTitle">佛小柑日常表情包</h2>
+        <p class="short-desc" data-i18n="stickerPackDesc">点击任意表情可看大图、听佛小柑说一句，还能一键保存透明背景单图发给好友～</p>
+
+        <div class="sticker-filter-row" id="stickerFilterRow" role="group" data-i18n-aria="ariaStickerFilter" aria-label="表情分类筛选">
+          <button type="button" class="filter-chip active" data-sticker-filter="all" data-i18n="filterAll">全部 24</button>
+          <button type="button" class="filter-chip" data-sticker-filter="happy" data-i18n="filterHappy">开心治愈</button>
+          <button type="button" class="filter-chip" data-sticker-filter="mood" data-i18n="filterMood">日常情绪</button>
+          <button type="button" class="filter-chip" data-sticker-filter="pose" data-i18n="filterPose">可爱动作</button>
+        </div>
+
+        <div class="sticker-grid" id="stickerGrid"></div>
+      </article>
+
+      <article class="sticker-card">
+        <div class="short-card-head">
+          <span class="badge-pill badge-b" data-i18n="stickerSheetBadge">完整总览图</span>
+          <span class="ep-tag">24 IN 1</span>
+        </div>
+        <h2 class="short-title" data-i18n="stickerSheetTitle">佛小柑全套 24 格表情合集</h2>
+        <div class="sheet-frame-wrap">
+          <button type="button" class="comic-frame-btn" id="openSheetBtn" data-i18n-aria="comicZoomHint" aria-label="查看大图">
+            <img class="comic-img" src="./assets/stickers/sheet.jpg" alt="佛小柑 24 格表情包合集" loading="lazy" />
+            <span class="comic-zoom-hint" data-i18n="comicZoomHint">🔍 点击查看大图</span>
+          </button>
+        </div>
+        <div class="short-actions">
+          <a class="short-action-link" href="./assets/stickers/sheet.jpg" download="foxiaogan-stickers-sheet.jpg" data-i18n="downloadSheet">⬇ 保存完整合集大图</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- Tab 3: Apps Tab -->
+    <main class="tab-panel hidden" id="panel-apps">
+      <div class="app-cards">
+        <!-- App A: Record App -->
+        <article class="app-card card-a">
+          <div class="app-card-top">
+            <span class="badge-pill badge-a" data-i18n="badgeA">记录型</span>
+            <span class="live-stat" id="liveStatA">今日 0 / 8 杯</span>
+          </div>
+          <div class="app-card-body">
+            <div class="app-thumb-wrap thumb-a">
+              <img class="app-thumb" src="./assets/expressions/happy.png" alt="佛手喝茶记" width="74" height="98" />
+            </div>
+            <div class="app-meta">
+              <h2 class="app-name" data-i18n="appAName">佛手喝茶记</h2>
+              <p class="app-one-liner" data-i18n="appADesc">每喝下一杯温茶，佛小柑就渐渐水润发亮，陪你零压力补水。</p>
+              <div class="mini-progress-track" aria-hidden="true">
+                <div class="mini-progress-fill" id="liveBarA" style="width: 0%"></div>
+              </div>
+              <div class="chip-row">
+                <span class="mini-chip" data-i18n="chip10s">10 秒打卡</span>
+                <span class="mini-chip" data-i18n="chipNoGuilt">零负罪感</span>
+                <span class="mini-chip" data-i18n="chipProps">茶席收藏</span>
+              </div>
+            </div>
+          </div>
+          <a href="./app-a/index.html" class="open-app-btn" data-i18n="openAppA">打开《佛手喝茶记》 →</a>
+        </article>
+
+        <!-- App B: Mini-Game App -->
+        <article class="app-card card-b">
+          <div class="app-card-top">
+            <span class="badge-pill badge-b" data-i18n="badgeB">游戏型</span>
+            <span class="live-stat trophy-stat" id="liveStatB">🏆 最高 0 分</span>
+          </div>
+          <div class="app-card-body">
+            <div class="app-thumb-wrap thumb-b catch-scene-sm">
+              <svg class="falling-cup-svg" viewBox="0 0 64 64" aria-hidden="true">
+                <path d="M32 4 L32 13" stroke="var(--fg-main-deep)" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3" opacity="0.65" />
+                <path d="M22 8 L24 14" stroke="var(--fg-main-deep)" stroke-width="1.6" stroke-linecap="round" opacity="0.45" />
+                <path d="M42 8 L40 14" stroke="var(--fg-main-deep)" stroke-width="1.6" stroke-linecap="round" opacity="0.45" />
+                <path d="M12 20 C16 14 21 15 19 21 C17 24 12 23 12 20 Z" fill="var(--fg-leaf)" />
+                <path d="M52 14 L53.6 17.5 L57 19 L53.6 20.5 L52 24 L50.4 20.5 L47 19 L50.4 17.5 Z" fill="var(--fg-main)" />
+                <g transform="translate(32 37) rotate(-11) translate(-32 -37)">
+                  <path d="M45 30 C52 30 53 41 44 43" fill="none" stroke="var(--fg-white-soft)" stroke-width="3.6" stroke-linecap="round" />
+                  <path d="M45 30 C52 30 53 41 44 43" fill="none" stroke="var(--fg-cup-stroke)" stroke-width="1.4" stroke-linecap="round" />
+                  <path d="M18 24 L46 24 L43 44 C42.4 48 38.5 50 32 50 C25.5 50 21.6 48 21 44 Z" fill="var(--fg-white-glass)" stroke="var(--fg-cup-stroke)" stroke-width="1.8" />
+                  <path d="M20.2 31 L43.8 31 L41.5 43.4 C41 46.5 37.8 48 32 48 C26.2 48 23 46.5 22.5 43.4 Z" fill="var(--fg-cup-tea)" />
+                  <ellipse cx="32" cy="31" rx="11.8" ry="2.6" fill="var(--fg-cup-tea-top)" />
+                  <ellipse cx="32" cy="24" rx="14" ry="2.8" fill="var(--fg-white-soft)" stroke="var(--fg-cup-stroke)" stroke-width="1.4" />
+                  <path d="M28 41 C28 36 33 34 36.5 34.5 C36 39 33 42.5 28 41 Z" fill="var(--fg-leaf)" />
+                  <path d="M27.5 41.8 L34 36.5" stroke="var(--fg-cup-leaf-vein)" stroke-width="1" stroke-linecap="round" />
+                  <path d="M22.5 28 L24 42" stroke="var(--fg-white-soft)" stroke-width="2" stroke-linecap="round" />
+                </g>
+              </svg>
+              <img class="app-thumb catch-char-sm" src="./assets/expressions/surprised.png" alt="佛小柑正在接茶杯" width="72" height="96" />
+            </div>
+            <div class="app-meta">
+              <h2 class="app-name" data-i18n="appBName">佛手接茶香</h2>
+              <p class="app-one-liner" data-i18n="appBDesc">接住嫩茶叶与金佛手，拿暖心茶壶开双倍护盾，躲开冰块与焦叶！</p>
+              <div class="chip-row">
+                <span class="mini-chip" data-i18n="chipCombo">连击加分</span>
+                <span class="mini-chip" data-i18n="chipShield">茶壶护盾</span>
+                <span class="mini-chip" data-i18n="chipPoster">战绩存图</span>
+              </div>
+            </div>
+          </div>
+          <a href="./app-b/index.html" class="open-app-btn secondary" data-i18n="openAppB">打开《佛手接茶香》 →</a>
+        </article>
+      </div>
+
+      <!-- Compact Collapsible PWA Install Guide -->
+      <details class="pwa-tip-card">
+        <summary class="pwa-summary" data-i18n="pwaTitle">📲 添加到手机主屏（像原生 App 一样使用）</summary>
+        <p class="pwa-body" data-i18n="pwaBody">在手机 Safari 点击「分享 → 添加到主屏幕」，或在 Chrome 点击「安装应用」，佛小柑就会乖乖住在你的手机桌面上啦！</p>
+      </details>
+    </main>
+
+    <!-- Tab 4: Shorts Tab -->
+    <section class="tab-panel hidden" id="panel-shorts">
+      <div class="shorts-feed">
+        <!-- Short 01 -->
+        <article class="short-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="short1Badge">漫画短片 · 15秒</span>
+            <span class="ep-tag">EP.01</span>
+          </div>
+          <h2 class="short-title" data-i18n="short1Title">养生第1天，绝不碰冰的！</h2>
+          <p class="short-desc" data-i18n="short1Desc">早起立志只喝温佛手茶，下午三点却遇上续命冰美式——佛小柑的“抵消哲学”。</p>
+
+          <div class="short-stage is-paused" data-stage-video="shortVideo1">
+            <video
+              id="shortVideo1"
+              class="short-video"
+              src="./shorts/web/foshou-short01-zh-720.mp4"
+              poster="./shorts/deliverables/foshou-short01-cover-zh.png"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            ></video>
+            <div class="short-paused-badge" aria-hidden="true">▶</div>
+            <div class="short-overlay-controls">
+              <button type="button" class="short-ctl-btn" data-toggle-mute="shortVideo1" aria-label="切换声音">🔇 <span data-i18n="soundMuted">静音</span></button>
+              <button type="button" class="short-ctl-btn" data-toggle-play="shortVideo1" aria-label="播放或暂停">▶</button>
+            </div>
+            <div class="short-progress-track" aria-hidden="true">
+              <div class="short-progress-fill" id="shortProg1"></div>
+            </div>
+          </div>
+
+          <div class="short-actions">
+            <a id="short1HdLink" class="short-action-link" href="./shorts/deliverables/foshou-short01-zh.mp4" download data-i18n="downloadHd">⬇ 下载高清视频</a>
+          </div>
+        </article>
+
+        <!-- Short 02 -->
+        <article class="short-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="short2Badge">日常 POV · 9秒</span>
+            <span class="ep-tag">EP.02</span>
+          </div>
+          <h2 class="short-title" data-i18n="short2Title">刚泡好温茶，弹出“今晚临时加会”</h2>
+          <p class="short-desc" data-i18n="short2Desc">刚泡好一杯热乎乎的佛手茶准备歇会儿，手机却突然弹出“今晚临时加会”通知……</p>
+
+          <div class="short-stage is-paused" data-stage-video="shortVideo2">
+            <video
+              id="shortVideo2"
+              class="short-video"
+              src="./shorts/web/foshou-short02-zh-720.mp4"
+              poster="./shorts/deliverables/foshou-short02-cover-zh.png"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            ></video>
+            <div class="short-paused-badge" aria-hidden="true">▶</div>
+            <div class="short-overlay-controls">
+              <button type="button" class="short-ctl-btn" data-toggle-mute="shortVideo2" aria-label="切换声音">🔇 <span data-i18n="soundMuted">静音</span></button>
+              <button type="button" class="short-ctl-btn" data-toggle-play="shortVideo2" aria-label="播放或暂停">▶</button>
+            </div>
+            <div class="short-progress-track" aria-hidden="true">
+              <div class="short-progress-fill" id="shortProg2"></div>
+            </div>
+          </div>
+
+          <div class="short-actions">
+            <a id="short2HdLink" class="short-action-link" href="./shorts/deliverables/foshou-short02-zh.mp4" download data-i18n="downloadHd">⬇ 下载高清视频</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tab 5: Comics Tab -->
+    <section class="tab-panel hidden" id="panel-comics">
+      <div class="comics-feed">
+        <!-- Comic 01 -->
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="comic1Badge">四格漫画 · 第 1 话</span>
+            <span class="ep-tag">NO.01</span>
+          </div>
+          <h2 class="short-title" data-i18n="comic1Title">今天起做清晨冥想达人！</h2>
+          <p class="short-desc" data-i18n="comic1Desc">闭眼吸气感受自然能量……结果一秒入梦！不过梦里冥想过，喝杯茶就都好啦～</p>
+
+          <button type="button" class="comic-frame-btn" data-open-comic="1" data-i18n-aria="comicZoomHint" aria-label="查看大图">
+            <img id="comicImg1" class="comic-img" src="./comics/comic01-zh.jpg" alt="佛小柑四格漫画第1话" loading="lazy" />
+            <span class="comic-zoom-hint" data-i18n="comicZoomHint">🔍 点击查看大图</span>
+          </button>
+
+          <div class="short-actions">
+            <a id="comicDl1" class="short-action-link" href="./comics/comic01-zh.jpg" download="foxiaogan-comic01-zh.jpg" data-i18n="downloadComic">⬇ 保存漫画图片</a>
+          </div>
+        </article>
+
+        <!-- Comic 02 -->
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="comic2Badge">四格漫画 · 第 2 话</span>
+            <span class="ep-tag">NO.02</span>
+          </div>
+          <h2 class="short-title" data-i18n="comic2Title">柑橘茶怎么越喝越苦？</h2>
+          <p class="short-desc" data-i18n="comic2Desc">开水冲泡苦到灵魂出窍！佛小柑的泡茶小秘诀：60°C 温水慢慢泡才清香不苦～</p>
+
+          <button type="button" class="comic-frame-btn" data-open-comic="2" data-i18n-aria="comicZoomHint" aria-label="查看大图">
+            <img id="comicImg2" class="comic-img" src="./comics/comic02-zh.jpg" alt="佛小柑四格漫画第2话" loading="lazy" />
+            <span class="comic-zoom-hint" data-i18n="comicZoomHint">🔍 点击查看大图</span>
+          </button>
+
+          <div class="short-actions">
+            <a id="comicDl2" class="short-action-link" href="./comics/comic02-zh.jpg" download="foxiaogan-comic02-zh.jpg" data-i18n="downloadComic">⬇ 保存漫画图片</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Guohe Town Seamless Neighbor Dock -->
+    <section class="town-neighbors-card" aria-label="果核镇邻里串门">
+      <div class="town-neighbors-head">
+        <div>
+          <span class="town-neighbors-kicker">
+            <span class="section-kicker__dot section-kicker__dot--moss" aria-hidden="true"></span>
+            <span data-i18n="neighborsKicker">VISIT NEIGHBORS · 果核镇串门地图</span>
+          </span>
+          <h2 class="town-neighbors-title" data-i18n="neighborsTitle">顺路去其他果核邻居的房间坐坐</h2>
+        </div>
+        <div class="town-neighbors-actions">
+          <a href="../../index.html?mailbox=bergamot#mailbox-portal" class="town-neighbors-btn" data-i18n="neighborsMailBtn">✉️ 给佛小柑留一件小事</a>
+        </div>
+      </div>
+
+      <div class="town-neighbors-grid">
+        <a class="town-neighbor-link" data-role="pineapple" href="../../room.html?role=pineapple">
+          <img src="../../assets/char-pineapple.png" alt="菠大炮" loading="lazy" />
+          <span data-i18n="nb_pineapple">菠大炮</span>
+        </a>
+        <a class="town-neighbor-link" data-role="strawberry" href="../../room.html?role=strawberry">
+          <img src="../../assets/char-strawberry.png" alt="草莓菜" loading="lazy" />
+          <span data-i18n="nb_strawberry">草莓菜</span>
+        </a>
+        <a class="town-neighbor-link" data-role="pomelo" href="../../room.html?role=pomelo">
+          <img src="../../assets/char-pomelo.png" alt="呆呆柚" loading="lazy" />
+          <span data-i18n="nb_pomelo">呆呆柚</span>
+        </a>
+        <a class="town-neighbor-link is-current" data-role="bergamot" href="./index.html" aria-current="page">
+          <img src="../../assets/char-bergamot.png" alt="佛小柑" loading="lazy" />
+          <span data-i18n="nb_bergamot">佛小柑</span>
+        </a>
+        <a class="town-neighbor-link" data-role="peach" href="../../room.html?role=peach">
+          <img src="../../assets/char-peach.png" alt="举重桃" loading="lazy" />
+          <span data-i18n="nb_peach">举重桃</span>
+        </a>
+        <a class="town-neighbor-link" data-role="grape" href="../../room.html?role=grape">
+          <img src="../../assets/char-grape.png" alt="葡小萄" loading="lazy" />
+          <span data-i18n="nb_grape">葡小萄</span>
+        </a>
+        <a class="town-neighbor-link" data-role="apple" href="../../room.html?role=apple">
+          <img src="../../assets/char-apple.png" alt="青苹果" loading="lazy" />
+          <span data-i18n="nb_apple">青苹果</span>
+        </a>
+        <a class="town-neighbor-link" data-role="sugarapple" href="../../room.html?role=sugarapple">
+          <img src="../../assets/char-sugarapple.png" alt="释小迦" loading="lazy" />
+          <span data-i18n="nb_sugarapple">释小迦</span>
+        </a>
+      </div>
+    </section>
+
+    <footer class="room-footer">
+      <p data-i18n="footerTip">✨ 点一下或拖起底部散步的佛小柑试试吧～</p>
+    </footer>
+  </div>
+
+  <!-- Full-Screen Lightbox (Comics, Sticker Sheet & Individual Stickers) -->
+  <div class="comic-lightbox hidden" id="comicLightbox" role="dialog" aria-modal="true" data-i18n-aria="ariaLightbox" aria-label="大图预览">
+    <button type="button" class="lightbox-close" id="lightboxClose" data-i18n-aria="ariaCloseLightbox" aria-label="关闭大图">✕</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-media-wrap" id="lightboxMediaWrap">
+        <img id="lightboxImg" class="lightbox-img" src="" alt="" />
+      </div>
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+      <p class="lightbox-quote hidden" id="lightboxQuote"></p>
+      <div class="lightbox-controls hidden" id="lightboxStickerControls">
+        <button type="button" class="lb-nav-btn" id="lbPrevBtn" data-i18n-aria="ariaPrevSticker" aria-label="上一个表情">‹</button>
+        <a id="lbDownloadBtn" class="lb-download-btn" href="" download data-i18n="downloadSingleSticker">⬇ 保存透明表情</a>
+        <button type="button" class="lb-nav-btn" id="lbNextBtn" data-i18n-aria="ariaNextSticker" aria-label="下一个表情">›</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./room.js"></script>
+  <script src="./follow/walker.js"></script>
+</body>
+</html>

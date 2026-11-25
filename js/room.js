@@ -7,6 +7,8 @@ import {
   t,
   prefersReducedMotion,
   observeReveals,
+  getCustomRoomUrl,
+  getRoomUrl,
   showToast,
   hideToast,
   iconSvg,
@@ -38,6 +40,10 @@ function switchRole(roleId, pushHistory = true) {
   if (!teamData) return;
   const exists = teamData.characters.some((c) => c.id === roleId);
   if (!exists) return;
+  if (getCustomRoomUrl(roleId)) {
+    window.location.href = getRoomUrl(roleId);
+    return;
+  }
   clearTimeout(interactResetTimer);
   hideToast();
   currentRoleId = roleId;
@@ -395,10 +401,18 @@ loadTeamData()
   .then((data) => {
     teamData = data;
     currentRoleId = readRoleFromUrl(data.characters);
+    if (getCustomRoomUrl(currentRoleId)) {
+      window.location.replace(getRoomUrl(currentRoleId));
+      return;
+    }
     renderAll();
     onLangChange(renderAll);
     window.addEventListener('popstate', () => {
       currentRoleId = readRoleFromUrl(teamData.characters);
+      if (getCustomRoomUrl(currentRoleId)) {
+        window.location.replace(getRoomUrl(currentRoleId));
+        return;
+      }
       activeMoodKey = 'happy';
       renderAll();
     });

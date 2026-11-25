@@ -296,6 +296,7 @@
       "id": "bergamot",
       "category": "healing",
       "interactionType": "zen-tea",
+      "roomUrl": "./characters/foxiaogan/index.html",
       "colorToken": "--role-bergamot",
       "softColorToken": "--role-bergamot-soft",
       "avatar": "./assets/avatar-bergamot.jpg",

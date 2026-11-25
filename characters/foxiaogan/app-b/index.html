@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#F4B93B" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="佛手接茶香" />
+  <title>佛手接茶香 · 불수 차받기</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="icon" type="image/png" href="../assets/icons/icon-192.png" />
+  <link rel="apple-touch-icon" href="../assets/icons/icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=Noto+Sans+SC:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <a href="../index.html" class="pill-btn back-link">
+        <span aria-hidden="true">←</span>
+        <span data-i18n="backRoom">我的房间</span>
+      </a>
+      <div class="top-controls">
+        <button type="button" class="icon-pill" id="muteBtn" data-i18n-aria="ariaMute" aria-label="静音开关">🔊</button>
+        <button type="button" class="icon-pill hidden" id="pauseBtn" data-i18n-aria="ariaPause" aria-label="暂停游戏">⏸️</button>
+        <button type="button" class="pill-btn lang-btn" id="langToggle" data-i18n-aria="ariaLang" aria-label="切换语言">한국어</button>
+      </div>
+    </header>
+
+    <!-- HUD Strip -->
+    <section class="hud-bar" aria-label="游戏状态">
+      <div class="hud-box">
+        <span class="hud-label" data-i18n="scoreLabel">茶香得分</span>
+        <strong class="hud-val" id="scoreVal">0</strong>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label" data-i18n="livesLabel">温暖值</span>
+        <strong class="hud-val lives-val" id="livesVal">❤️❤️❤️</strong>
+      </div>
+      <div class="hud-box">
+        <span class="hud-label" data-i18n="bestLabel">最高纪录</span>
+        <strong class="hud-val" id="bestVal">0</strong>
+      </div>
+    </section>
+
+    <!-- Game Canvas Stage -->
+    <main class="canvas-stage" id="canvasStage">
+      <canvas id="gameCanvas" width="390" height="540" data-i18n-aria="ariaCanvas" aria-label="佛手接茶香游戏画面"></canvas>
+
+      <!-- Active Status Badges (Speed / Combo / Shield Countdown) -->
+      <div class="stage-badges">
+        <div class="badge-group">
+          <span class="badge speed-badge" id="speedBadge">x1.00</span>
+          <span class="badge combo-badge hidden" id="comboBadge">🔥 0 连击</span>
+        </div>
+        <span class="badge shield-badge hidden" id="shieldBadge">🫖 5.0s x2</span>
+      </div>
+
+      <!-- Speed-Up / Milestone Banner -->
+      <div class="stage-banner hidden" id="stageBanner" role="status" aria-live="polite"></div>
+
+      <!-- Start Overlay (Step 4) -->
+      <div class="overlay" id="startOverlay">
+        <div class="overlay-card">
+          <div class="catch-cover-stage" aria-label="佛小柑正在接茶杯">
+            <svg class="catch-cover-cup" viewBox="0 0 80 80" aria-hidden="true">
+              <path d="M40 4 L40 16" stroke="#E09912" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 4" opacity="0.7" />
+              <path d="M27 10 L30 18" stroke="#E09912" stroke-width="1.8" stroke-linecap="round" opacity="0.45" />
+              <path d="M53 10 L50 18" stroke="#E09912" stroke-width="1.8" stroke-linecap="round" opacity="0.45" />
+              <!-- Drifting tea leaves & sparkles -->
+              <path d="M11 26 C16 18 23 19 20 27 C17 31 11 30 11 26 Z" fill="#58A866" />
+              <path d="M62 34 C66 29 72 30 70 36 C68 39 63 38 62 34 Z" fill="#6BBF79" />
+              <path d="M63 14 L65 18.5 L69.5 20.5 L65 22.5 L63 27 L61 22.5 L56.5 20.5 L61 18.5 Z" fill="#F5B82E" />
+              <path d="M16 44 L17.4 47 L20.4 48.4 L17.4 49.8 L16 52.8 L14.6 49.8 L11.6 48.4 L14.6 47 Z" fill="#F5B82E" opacity="0.85" />
+              <!-- Glossy glass teacup with golden tea & green leaf -->
+              <g transform="translate(40 46) rotate(-10) translate(-40 -46)">
+                <path d="M55 37 C64 37 65 51 54 53" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="4.2" stroke-linecap="round" />
+                <path d="M55 37 C64 37 65 51 54 53" fill="none" stroke="#DFC58D" stroke-width="1.6" stroke-linecap="round" />
+                <path d="M22 30 L58 30 L54.2 55 C53.4 60 48.5 62.5 40 62.5 C31.5 62.5 26.6 60 25.8 55 Z" fill="rgba(255,255,255,0.75)" stroke="#DFC58D" stroke-width="2" />
+                <path d="M24.8 39 L55.2 39 L52.4 54.4 C51.8 58 47.6 60 40 60 C32.4 60 28.2 58 27.6 54.4 Z" fill="#F6C948" />
+                <ellipse cx="40" cy="39" rx="15.2" ry="3.2" fill="#FCE07A" />
+                <ellipse cx="40" cy="30" rx="18" ry="3.5" fill="rgba(255,255,255,0.88)" stroke="#DFC58D" stroke-width="1.6" />
+                <path d="M35 51.5 C35 45.5 41.5 43 45.8 43.8 C45 49.5 41.2 53.5 35 51.5 Z" fill="#4E9B5B" />
+                <path d="M34.5 52.2 L42.5 46" stroke="#3B7B46" stroke-width="1.2" stroke-linecap="round" />
+                <path d="M28 35 L30 52" stroke="rgba(255,255,255,0.85)" stroke-width="2.4" stroke-linecap="round" />
+              </g>
+            </svg>
+            <img class="overlay-char catch-cover-char" src="../assets/expressions/surprised.png" alt="佛小柑正在接茶杯" width="96" height="128" />
+          </div>
+          <h1 class="overlay-title" data-i18n="gameTitle">佛手接茶香</h1>
+          <p class="overlay-sub" data-i18n="gameSub">左右拖动或按方向键，帮佛小柑接住茶香、躲开冰块与焦叶！</p>
+
+          <ul class="rule-list">
+            <li><span>🍃 🍵 🍋</span><span data-i18n="ruleGood">茶叶/茶杯 +1，金佛手 +2，5连击加分</span></li>
+            <li><span>🫖 💛</span><span data-i18n="rulePower">茶壶 5秒护盾双倍 · 暖心茶回1命</span></li>
+            <li><span>🧊 🔥</span><span data-i18n="ruleBad">冰块/焦叶（弱点）：温暖值 -1</span></li>
+          </ul>
+
+          <button type="button" class="primary-btn" id="startBtn" data-i18n="startBtn">开始接茶香</button>
+        </div>
+      </div>
+
+      <!-- Pause Overlay (Step 5) -->
+      <div class="overlay hidden" id="pauseOverlay">
+        <div class="overlay-card compact">
+          <img class="overlay-char small" src="../assets/expressions/base.png" alt="佛小柑" width="80" height="106" />
+          <h2 class="overlay-title" data-i18n="pausedTitle">先歇口气喝口茶</h2>
+          <p class="overlay-sub" data-i18n="pausedSub">游戏已自动暂停，准备好随时继续～</p>
+          <div class="over-actions">
+            <button type="button" class="primary-btn" id="resumeBtn" data-i18n="resumeBtn">继续游戏</button>
+            <button type="button" class="secondary-btn" id="pauseRestartBtn" data-i18n="restartBtn">重开</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Over Overlay (Step 4) -->
+      <div class="overlay hidden" id="overOverlay">
+        <div class="overlay-card">
+          <img class="overlay-char" id="overCharImg" src="../assets/expressions/proud.png" alt="佛小柑" width="100" height="132" />
+          <h2 class="overlay-title" data-i18n="overTitle">本局泡茶完成！</h2>
+          <div class="over-score-pill">
+            <span data-i18n="finalScore">本局得分</span>
+            <strong id="finalScoreVal">0</strong>
+            <span class="new-best-tag hidden" id="newBestTag" data-i18n="newBest">新纪录!</span>
+          </div>
+
+          <div class="over-mini-stats">
+            <div>
+              <span data-i18n="maxComboLabel">最高连击</span>
+              <strong id="maxComboVal">0</strong>
+            </div>
+            <div>
+              <span data-i18n="caughtLabel">接住茶香</span>
+              <strong id="caughtVal">0</strong>
+            </div>
+            <div>
+              <span data-i18n="timeLabel">泡茶时长</span>
+              <strong id="timeVal">0s</strong>
+            </div>
+          </div>
+
+          <p class="over-quote" id="overQuote"></p>
+          <div class="over-actions">
+            <button type="button" class="primary-btn" id="restartBtn" data-i18n="restartBtn">再来一局</button>
+            <button type="button" class="secondary-btn" id="shareScoreBtn" data-i18n="saveCardBtn">存战绩图</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Touch-friendly Directional Pads (optional alongside drag & arrow keys) -->
+    <div class="touch-pad" data-i18n-aria="ariaPad" aria-label="方向按钮">
+      <button type="button" class="pad-btn" id="leftPadBtn" data-i18n-aria="ariaLeft" aria-label="向左移动">◀</button>
+      <span class="pad-hint" data-i18n="controlHint">拖动画面 / ← → / 按键移动</span>
+      <button type="button" class="pad-btn" id="rightPadBtn" data-i18n-aria="ariaRight" aria-label="向右移动">▶</button>
+    </div>
+
+    <footer class="game-footer">
+      <p class="privacy-line" data-i18n="privacyNote">🔒 最高纪录只保存在这台手机里</p>
+    </footer>
+  </div>
+
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="./game.js"></script>
+</body>
+</html>
