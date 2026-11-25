@@ -1,0 +1,557 @@
+/* 负责人：果核镇共同团队 · 角色专属个人房间页样式（100% 引用 css/common.css 令牌，零硬编码色值） */
+
+.room-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-nav);
+  background: var(--bg-surface-translucent);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-float);
+}
+
+.room-topbar__inner {
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.room-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-wood-elevated-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--text-on-wood);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background var(--dur-fast) var(--ease-gentle), border-color var(--dur-fast) var(--ease-gentle);
+}
+
+.room-back-link:hover {
+  background: var(--bg-surface-highest);
+  border-color: var(--border-wood);
+}
+
+.room-topbar__plaque {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-wood-deep);
+  border: 1px solid var(--card-ring);
+  box-shadow: var(--shadow-inset-wood);
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--text-on-wood);
+  white-space: nowrap;
+}
+
+.room-topbar__trait {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--card-accent);
+  color: var(--card-ink);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@media (max-width: 639px) {
+  .room-topbar__inner {
+    gap: var(--space-2);
+  }
+
+  .room-back-link {
+    width: 44px;
+    padding: 0;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .room-back-link__text {
+    display: none;
+  }
+
+  .room-topbar__plaque {
+    padding: 6px 12px;
+    font-size: 13px;
+    overflow: hidden;
+  }
+
+  .room-topbar__plaque > span:nth-child(2) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .room-topbar__trait {
+    display: none;
+  }
+}
+
+/* 房间主舞台 */
+.room-main {
+  padding: calc(var(--nav-height) + var(--space-6)) 0 var(--space-8);
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% 8%, var(--card-tint) 0%, var(--bg-surface) 54%);
+}
+
+.room-hero-card {
+  position: relative;
+  border-radius: var(--radius-xl);
+  background: var(--grad-door-shell);
+  border: 1px solid var(--card-ring);
+  box-shadow: var(--shadow-modal);
+  padding: var(--space-6);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  align-items: center;
+  margin-bottom: var(--space-7);
+}
+
+@media (min-width: 900px) {
+  .room-hero-card {
+    grid-template-columns: 0.92fr 1.15fr;
+    padding: var(--space-7);
+    gap: var(--space-7);
+  }
+}
+
+/* 左侧 3D 微缩展台 */
+.room-diorama-wrap {
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.room-diorama {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  min-height: 330px;
+  padding: var(--space-6) var(--space-5) var(--space-5);
+  border-radius: var(--radius-pill) var(--radius-pill) var(--radius-lg) var(--radius-lg);
+  background: radial-gradient(circle at 50% 42%, var(--card-tint) 0%, var(--bg-wood-niche) 74%);
+  border: 1.5px solid var(--card-ring);
+  box-shadow: var(--shadow-niche-inset), var(--shadow-float);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.3s var(--ease-gentle), box-shadow var(--dur-base) var(--ease-gentle);
+}
+
+.room-diorama::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--grad-niche-cone);
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .room-diorama {
+    min-height: 390px;
+  }
+}
+
+.room-diorama:hover {
+  box-shadow: var(--shadow-niche-inset), var(--shadow-modal), 0 0 0 1.5px var(--card-accent);
+}
+
+.room-diorama__stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  transform-style: preserve-3d;
+  transform: translateZ(46px);
+}
+
+.room-figure {
+  position: relative;
+  z-index: 3;
+  height: 224px;
+  width: auto;
+  max-width: 88%;
+  object-fit: contain;
+  filter: var(--shadow-figure-3d);
+  transform-origin: center bottom;
+  transition: transform 0.36s var(--ease-spring), filter var(--dur-base) var(--ease-gentle);
+}
+
+@media (min-width: 640px) {
+  .room-figure {
+    height: 274px;
+  }
+}
+
+.room-diorama:hover .room-figure {
+  transform: translateY(-10px) scale(1.05);
+  filter: var(--shadow-figure-hover);
+}
+
+.room-pedestal {
+  width: 78%;
+  height: 24px;
+  margin-top: -10px;
+  border-radius: var(--radius-pill);
+  background: var(--grad-pedestal);
+  border: 1px solid var(--border-wood);
+  box-shadow: var(--shadow-pedestal-lip);
+  position: relative;
+  z-index: 2;
+}
+
+.room-pedestal__shadow {
+  position: absolute;
+  inset: 4px 16%;
+  border-radius: var(--radius-pill);
+  background: var(--shadow-ground);
+}
+
+.room-diorama__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-wood-deep-soft);
+  border: 1px solid var(--border-soft);
+  color: var(--accent-lantern-hover);
+  font-size: var(--text-caption);
+  font-weight: 700;
+}
+
+/* 右侧屋主档案头与表情切换 */
+.room-intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.room-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.room-badge-wood {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-wood-deep);
+  border: 1px solid var(--border-wood);
+  color: var(--accent-lantern-hover);
+  font-size: var(--text-caption);
+  font-weight: 700;
+}
+
+.room-badge-role {
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--card-accent);
+  color: var(--card-ink);
+  font-size: var(--text-caption);
+  font-weight: 800;
+}
+
+.room-heading {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-display);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--text-on-wood);
+}
+
+.room-subtitle {
+  margin: 0;
+  font-size: var(--text-body-lg);
+  font-weight: 700;
+  color: var(--card-accent);
+}
+
+.room-quirk-box {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-lowest-soft);
+  border-left: 3px solid var(--card-accent);
+  font-size: var(--text-sm);
+  color: var(--text-on-wood-body);
+}
+
+.room-quirk-box strong {
+  color: var(--card-accent);
+  white-space: nowrap;
+}
+
+.room-speech-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface-lowest-soft);
+  border: 1px solid var(--border-soft);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.room-speech-card__quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: 800;
+  color: var(--text-on-wood);
+}
+
+.room-speech-card__mood {
+  margin: 0;
+  font-size: var(--text-sm);
+  color: var(--accent-lantern-hover);
+}
+
+.room-mood-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.room-mood-label {
+  font-size: var(--text-caption);
+  font-weight: 700;
+  color: var(--text-on-wood-muted);
+}
+
+.room-mood-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.room-mood-pill {
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-surface-high);
+  border: 1px solid var(--border-soft);
+  color: var(--text-on-wood-muted);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  transition: all var(--dur-fast) var(--ease-gentle);
+}
+
+.room-mood-pill:hover {
+  color: var(--text-on-wood);
+  border-color: var(--card-ring);
+}
+
+.room-mood-pill.is-active {
+  background: var(--card-accent);
+  color: var(--card-ink);
+  border-color: var(--card-accent);
+  font-weight: 800;
+}
+
+.room-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* 四栏可折叠档案（PRD §3.3 默认展开） */
+.room-archive-section {
+  margin-bottom: var(--space-7);
+}
+
+.room-archive-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .room-archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+.archive-accordion {
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface-low-soft);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  transition: opacity 0.55s var(--ease-gentle), transform 0.55s var(--ease-gentle), border-color var(--dur-fast) var(--ease-gentle), box-shadow var(--dur-fast) var(--ease-gentle);
+}
+
+.archive-accordion:hover {
+  box-shadow: var(--shadow-float);
+}
+
+.archive-accordion[open] {
+  border-color: var(--card-ring);
+}
+
+.archive-accordion__summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  cursor: pointer;
+  user-select: none;
+}
+
+.archive-accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.archive-accordion__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.archive-accordion__num {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  background: var(--card-tint);
+  color: var(--card-accent);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.archive-accordion__title {
+  font-family: var(--font-display);
+  font-size: var(--text-title);
+  font-weight: 800;
+  color: var(--text-on-wood);
+}
+
+.archive-accordion__badge {
+  padding: 2px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--accent-wax-soft);
+  color: var(--accent-wax);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.archive-accordion__chevron {
+  color: var(--text-on-wood-muted);
+  transition: transform var(--dur-fast) var(--ease-gentle);
+}
+
+.archive-accordion[open] .archive-accordion__chevron {
+  transform: rotate(180deg);
+}
+
+.archive-accordion__body {
+  padding: 0 var(--space-5) var(--space-5);
+  color: var(--text-on-wood-muted);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* 串门与邻里导航区 */
+.room-neighbors {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--bg-wood-deep);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-float);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.room-hop-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.neighbor-dock {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .neighbor-dock {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+}
+
+.neighbor-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 6px;
+  border-radius: var(--radius-md);
+  background: var(--bg-wood-elevated-soft);
+  border: 1.5px solid transparent;
+  color: var(--text-on-wood-muted);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  transition: transform var(--dur-fast) var(--ease-spring), border-color var(--dur-fast) var(--ease-gentle), color var(--dur-fast) var(--ease-gentle);
+}
+
+.neighbor-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-ring);
+  color: var(--text-on-wood);
+}
+
+.neighbor-item.is-current {
+  border-color: var(--card-accent);
+  background: var(--card-tint);
+  color: var(--text-on-wood);
+}
+
+.neighbor-item__img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: var(--shadow-figure-3d);
+}
