@@ -89,6 +89,18 @@
       zh: '开水冲泡苦到灵魂出窍！佛小柑的泡茶小秘诀：60°C 温水慢慢泡才清香不苦～',
       ko: '끓는 물에 껍질이 써져서 깜짝! 불소감의 꿀팁: 60도 미지근한 물로 우리면 향긋해유~',
     },
+    comic3Badge: { zh: '四格漫画 · 第 3 话', ko: '4컷 만화 · 3화' },
+    comic3Title: { zh: '今晚一定要早睡！', ko: '오늘 밤엔 꼭 일찍 자야지!' },
+    comic3Desc: {
+      zh: '喝完安神茶把手机反扣桌面，信誓旦旦十点睡——直到凌晨 02:15 被窝亮起熟悉微光……',
+      ko: '안신차 마시고 폰까지 뒤집어 뒀는데… 새벽 2시 15분 이불 속 불빛이 켜졌다! 내일 일찍 자지 뭐~',
+    },
+    comic4Badge: { zh: '四格漫画 · 第 4 话', ko: '4컷 만화 · 4화' },
+    comic4Title: { zh: '茶叶放久了怎么没香味了？', ko: '말린 찻잎, 왜 향이 다 날아갔지?' },
+    comic4Desc: {
+      zh: '透明罐晒太阳又挨着热蒸汽？佛小柑的锁香干货：避光密封放阴凉处，远离水汽才留香！',
+      ko: '창가 햇볕과 주전자 수증기 옆에 두면 눅눅해져요! 빛·습기 피해 불투명 밀폐통에 서늘하게 보관해요~',
+    },
     comicZoomHint: { zh: '🔍 点击查看大图', ko: '🔍 크게 보기' },
     downloadComic: { zh: '⬇ 保存漫画图片', ko: '⬇ 만화 이미지 저장' },
     short1Badge: { zh: '漫画短片 · 15秒', ko: '만화 쇼츠 · 15초' },
@@ -102,6 +114,18 @@
     short2Desc: {
       zh: '刚泡好一杯热乎乎的佛手茶准备歇会儿，手机却突然弹出“今晚临时加会”通知……',
       ko: '따뜻한 불수감 차를 막 우리고 쉬려던 순간, 휴대폰에 “오늘 밤 긴급 회의” 알림이 뜨는데…',
+    },
+    short3Badge: { zh: '漫画短片 · 15秒', ko: '만화 쇼츠 · 15초' },
+    short3Title: { zh: '今晚十点，准时睡觉！', ko: '오늘 밤 10시, 칼취침 도전!' },
+    short3Desc: {
+      zh: '睡前立下早睡 flag，喝完安神茶绝不看手机……结果凌晨两点十五分还在被窝刷泡茶法！',
+      ko: '밤 10시 칼취침을 다짐하고 폰까지 뒤집어 뒀는데… 새벽 2시 15분에 이불 속에서 차 우리는 법 정주행 중!',
+    },
+    short4Badge: { zh: '日常 POV · 9秒', ko: '일상 POV · 9초' },
+    short4Title: { zh: '闹钟没响惊醒，结果今天是周日?!', ko: '지각인 줄 알았는데 오늘 일요일?!' },
+    short4Desc: {
+      zh: '以为睡过头早八要迟到了，抬头一看台历原来是周日——慢慢来，先泡杯 60°C 温茶再继续躺！',
+      ko: '알람이 안 울려 지각인 줄 알고 화들짝! 달력을 보니 일요일?! 천천히 60°C 차부터 한 잔 마시고 더 눕자~',
     },
     soundMuted: { zh: '静音', ko: '음소거' },
     soundOn: { zh: '开声', ko: '소리 켜짐' },
@@ -165,6 +189,179 @@
     ariaPatChar: { zh: '拍一拍佛小柑', ko: '불소감 쓰다듬기' },
     ariaLightbox: { zh: '漫画大图预览', ko: '만화 크게 보기' },
     ariaCloseLightbox: { zh: '关闭大图', ko: '닫기' },
+    schedBadge: { zh: '风车茶坡日常', ko: '풍차 언덕 일상' },
+    schedTitle: { zh: '佛小柑的茶坡时刻表', ko: '불소감의 하루 시간표' },
+    schedLead: {
+      zh: '按风车转动的速度过一天，当前时段会悄悄亮起暖光。',
+      ko: '풍차가 도는 속도로 하루를 보내요. 지금 시간에 따뜻한 불이 켜져요.',
+    },
+    slot1Title: { zh: '晨雾收露 · 晒茶竹匾开窗', ko: '아침 이슬 · 찻잎 채반 열기' },
+    slot1Desc: {
+      zh: '趁太阳还不晒，先把昨夜采来的嫩叶与佛手干片摊在风车下。',
+      ko: '햇살이 강해지기 전에 어린 찻잎과 불수감 조각을 풍차 아래 펼쳐 둬요.',
+    },
+    slot2Title: { zh: '午间翻晒 · 给果皮做日光浴', ko: '한낮 일광욕 · 껍질 뒤집기' },
+    slot2Desc: {
+      zh: '把皱巴巴的小烦恼写在干橘皮上，翻面晒到清香四溢。',
+      ko: '구겨진 작은 고민을 마른 껍질에 적어 햇볕에 향긋하게 말려요.',
+    },
+    slot3Title: { zh: '60°C 慢泡 · 接待串门邻居', ko: '60°C 천천히 우리기 · 이웃 티타임' },
+    slot3Desc: {
+      zh: '温水慢慢冲开第一壶金佛手茶，谁路过风车茶坡都可以蹭一杯。',
+      ko: '미지근한 물로 첫 주전자를 우려 지나가는 이웃 누구에게나 나눠 줘요.',
+    },
+    slot4Title: { zh: '藤椅听水车 · 伴着果香充会儿电', ko: '흔들의자 휴식 · 물레방아 소리' },
+    slot4Desc: {
+      zh: '关掉闹钟听溪边水车哒哒转动，什么都不催，慢慢进入梦乡。',
+      ko: '알람을 끄고 시냇가 물레방아 소리를 들으며 천천히 충전해요.',
+    },
+    slotNowBadge: { zh: '此刻', ko: '지금' },
+    bondsBadge: { zh: '茶缘手账', ko: '이웃 차 일기' },
+    bondsTitle: { zh: '茶坡上的常客邻居', ko: '차 언덕의 단골 이웃들' },
+    bondsLead: {
+      zh: '风车茶坡永远为邻居温着一壶茶，点任意一位就能去对方房间串门。',
+      ko: '풍차 차 언덕은 언제나 이웃을 위해 차를 데워 둬요. 이웃을 눌러 방에 놀러 가 보세요.',
+    },
+    bond1Name: { zh: '呆呆柚 · 溪畔木桥', ko: '멍멍유 · 시냇가 나무다리' },
+    bond1Desc: {
+      zh: '最合拍的发呆茶友，两人能端着杯子一整个下午不说一句话。',
+      ko: '가장 잘 맞는 멍때리기 친구. 말없이 차만 마셔도 편안해요.',
+    },
+    bond2Name: { zh: '菠大炮 · 菠萝广播屋', ko: '보대포 · 파인애플 방송집' },
+    bond2Desc: {
+      zh: '每天播音后都会来讨一杯 60°C 润喉茶，顺便分享今天的新歌单。',
+      ko: '방송이 끝나면 늘 60°C 목 보호 차를 마시며 오늘의 선곡을 들려줘요.',
+    },
+    bond3Name: { zh: '举重桃 · 蜜桃训练屋', ko: '역도복숭 · 복숭아 트레이닝집' },
+    bond3Desc: {
+      zh: '练完杠铃嘴上说不累，但闻到茶香就会乖乖坐下来喝两口歇脚。',
+      ko: '안 힘들다고 버티다가도 차 향기가 나면 슬며시 앉아 쉬고 가요.',
+    },
+    bond4Name: { zh: '草莓菜 · 小白菜花园', ko: '딸기채 · 배추 정원' },
+    bond4Desc: {
+      zh: '雨天常躲进茶坡木棚烤干小白菜背包，一起分一壶热腾腾的果茶。',
+      ko: '비 오는 날이면 오두막에서 배추 가방을 말리며 따뜻한 과일차를 나눠 마셔요.',
+    },
+    pickerBadge: { zh: '互动抽签 · 零压力', ko: '기분 뽑기 · 무부담' },
+    pickerTitle: { zh: '抽一枚此刻心情贴纸', ko: '지금 내 기분 이모티콘 뽑기' },
+    pickerDesc: {
+      zh: '不知道发什么回复给朋友？选一个此刻状态，或者让佛小柑随机替你挑一枚透明贴纸。',
+      ko: '친구에게 뭐라고 답장할지 고민될 때, 지금 기분에 맞는 투명 이모티콘을 골라 보세요.',
+    },
+    sceneGreet: { zh: '☀️ 早安打招呼', ko: '☀️ 아침 인사' },
+    sceneTea: { zh: '🍵 约喝一杯茶', ko: '🍵 차 한 잔 할래?' },
+    sceneMeeting: { zh: '😤 拒绝临时加会', ko: '😤 긴급 회의 사절' },
+    sceneRelax: { zh: '🌿 下班慢慢躺', ko: '🌿 퇴근 후 힐링' },
+    sceneCheer: { zh: '💛 给朋友打气', ko: '💛 힘내라고 응원' },
+    pickerDrawBtn: { zh: '✦ 随机抽一枚贴纸', ko: '✦ 랜덤으로 한 장 뽑기' },
+    pickerCopyBtn: { zh: '复制这句台词', ko: '대사 복사하기' },
+    pickerZoomBtn: { zh: '查看大图', ko: '크게 보기' },
+    pickerSaveBtn: { zh: '⬇ 保存 PNG', ko: '⬇ PNG 저장' },
+    timerBadge: { zh: '房内小工具', ko: '방 안 미니 도구' },
+    timerTitle: { zh: '60°C 泡茶呼吸计时器', ko: '60°C 차 우리기 호흡 타이머' },
+    timerDesc: {
+      zh: '趁温水舒展茶叶的间隙，跟着佛小柑慢慢呼吸、放松一下肩膀。',
+      ko: '따뜻한 물에 찻잎이 천천히 퍼지는 동안 불소감과 함께 숨을 고르세요.',
+    },
+    timer30s: { zh: '30 秒喘口气', ko: '30초 숨 고르기' },
+    timer60s: { zh: '1 分钟慢泡', ko: '1분 천천히' },
+    timer180s: { zh: '3 分钟静心', ko: '3분 마음 쉼표' },
+    timerReady: { zh: '准备泡茶', ko: '준비 완료' },
+    timerCueIdle: {
+      zh: '调好 60°C 温水，按下开始一起慢呼吸吧～',
+      ko: '60°C 따뜻한 물을 붓고 시작을 눌러 천천히 호흡해 봐요~',
+    },
+    timerStartBtn: { zh: '✦ 开始泡茶计时', ko: '✦ 타이머 시작' },
+    timerPauseBtn: { zh: '暂停一会儿', ko: '잠시 멈춤' },
+    timerResumeBtn: { zh: '✦ 继续计时', ko: '✦ 다시 이어서' },
+    timerResetBtn: { zh: '重置', ko: '초기화' },
+    timerInhale: { zh: '慢慢吸气', ko: '천천히 들숨' },
+    timerExhale: { zh: '缓缓呼气', ko: '부드럽게 날숨' },
+    timerCueInhale: {
+      zh: '慢慢吸一口气，闻闻空气里暖暖的佛手柑清香…',
+      ko: '천천히 숨을 들이마시며 은은한 불수감 향기를 느껴 봐요…',
+    },
+    timerCueExhale: {
+      zh: '缓缓呼出来，把紧绷的肩膀轻轻放下来～',
+      ko: '부드럽게 숨을 내쉬며 굳었던 어깨 힘을 살짝 내려놓아요~',
+    },
+    timerDonePhase: { zh: '茶香正好', ko: '향기 완성' },
+    timerDoneCue: {
+      zh: '泡好啦！60°C 刚刚好不苦，先抿一小口润润喉吧～',
+      ko: '다 우러났어요! 쓰지 않고 딱 좋은 60°C, 한 모금 마셔 봐요~',
+    },
+    timerDoneToast: {
+      zh: '🍵 60°C 温茶泡好啦，记得先润润喉哦～',
+      ko: '🍵 60°C 따뜻한 차가 완성되었어요, 천천히 마셔요~',
+    },
+    recipesBadge: { zh: '茶坡配方笺', ko: '차 언덕 레시피' },
+    recipesTitle: { zh: '佛小柑的 3 道暖心茶方', ko: '불소감의 따뜻한 차 3선' },
+    recipesLead: {
+      zh: '不讲究繁琐茶道，只要一杯热乎乎、喝着舒服就好。',
+      ko: '복잡한 다도는 필요 없어요. 따뜻하고 편안한 한 잔이면 충분해요.',
+    },
+    rec1Name: { zh: '01 · 经典 60°C 金佛手温茶', ko: '01 · 클래식 60°C 불수감 차' },
+    rec1Desc: {
+      zh: '2 片干佛手配清甜温水，微甘不涩，最适合早起润喉。',
+      ko: '건조 불수감 2조각에 부드러운 온수. 쓰지 않고 아침 목을 감싸 줘요.',
+    },
+    rec2Name: { zh: '02 · 午后清风薄荷柑皮饮', ko: '02 · 오후 산들바람 민트 시트러스' },
+    rec2Desc: {
+      zh: '下午三点犯困时的温柔替代，清爽柑橘香悄悄赶走疲惫。',
+      ko: '오후 3시 졸릴 때 아이스 커피 대신 산뜻하게 기분을 깨워 줘요.',
+    },
+    rec3Name: { zh: '03 · 晚安洋甘菊佛手暖茶', ko: '03 · 굿나잇 캐모마일 불수감 차' },
+    rec3Desc: {
+      zh: '零咖啡因睡前伴侣，捧在手里暖一暖掌心，准备安心入梦。',
+      ko: '카페인 없는 잠들기 전 한 잔. 두 손으로 감싸고 포근히 쉬어요.',
+    },
+    copiedToast: { zh: '已复制佛小柑台词到剪贴板', ko: '불소감 대사를 클립보드에 복사했어요' },
+    teaserBadge: { zh: '下集筹备预告', ko: '다음 화 예고' },
+    shortTeaserTitle: { zh: '风车茶坡 · 正在画的新短片', ko: '풍차 차 언덕 · 준비 중인 쇼츠' },
+    ep3Title: { zh: '《风车转慢了一拍》', ko: '〈풍차가 한 박자 느려진 날〉' },
+    ep3Desc: {
+      zh: '呆呆柚上坡发呆，连风车叶片和飘散的茶香也跟着慢成 0.5 倍速。',
+      ko: '멍멍유가 언덕에서 멍을 때리자 풍차 날개와 차 향기까지 0.5배속으로 느려졌어요.',
+    },
+    ep4Title: { zh: '《雨天木棚里的双人壶》', ko: '〈비 오는 날 오두막의 두 사람 주전자〉' },
+    ep4Desc: {
+      zh: '突如其来的阵雨里，替淋湿的草莓菜烤干小白菜背包，一起分一壶暖茶。',
+      ko: '갑작스러운 소나기에 젖은 딸기채의 배추 가방을 말려 주며 따뜻한 차를 나눠 마셔요.',
+    },
+    notesBadge: { zh: '漫画延伸手记', ko: '만화 비하인드 노트' },
+    notesTitle: { zh: '读完四格 · 佛小柑的泡茶小抄', ko: '4컷 만화 뒤에 붙이는 차 메모' },
+    note1Title: { zh: '第 1 话延伸 · 睡回笼觉也不必自责', ko: '1화 메모 · 다시 잠들어도 괜찮아' },
+    note1Desc: {
+      zh: '冥想睡着说明身体真的很想充电，醒来伸个大懒腰、喝两口温水就已经满分啦。',
+      ko: '명상하다 잠들었다는 건 몸이 쉬고 싶다는 신호예요. 기지개 켜고 물 한 모금이면 충분해요.',
+    },
+    note2Title: { zh: '第 2 话延伸 · 为什么 60°C 温水最清香？', ko: '2화 메모 · 왜 60°C 물이 가장 향긋할까?' },
+    note2Desc: {
+      zh: '滚烫开水会把柑橘表皮的苦味素瞬间烫出，用略烫手又可入口的 60°C 慢泡，果香才最柔和。',
+      ko: '펄펄 끓는 물은 껍질의 쓴맛을 끌어내요. 60°C 미지근한 물로 우리면 향긋함이 살아나요.',
+    },
+    note3Title: { zh: '第 3 话延伸 · 睡前少刷屏的小窍门', ko: '3화 메모 · 잠들기 전 스마트폰 내려놓기' },
+    note3Desc: {
+      zh: '给手机在书桌留一个“睡前小床”，把手机放在够不着的充电处，自然就更容易早点合眼啦。',
+      ko: '침대 대신 책상 위에 스마트폰 충전 자리를 만들어 두면 밤늦게 덜 보게 돼요.',
+    },
+    note4Title: { zh: '第 4 话延伸 · 干茶叶与柑片怎么保存？', ko: '4화 메모 · 말린 찻잎·시트러스 보관법' },
+    note4Desc: {
+      zh: '干茶叶极易吸湿吸味，选不透光的密封陶瓷罐或铁罐放阴凉橱柜，远离烧水壶和阳光直射即可。',
+      ko: '마른 찻잎은 습기와 냄새를 잘 흡수해요. 빛이 안 드는 밀폐통에 넣어 서늘한 찬장에 보관하세요.',
+    },
+    comicNextBadge: { zh: '下话草稿本', ko: '다음 화 스케치북' },
+    comicNextTitle: { zh: '四格漫画 · 连载分镜预告', ko: '4컷 만화 · 연재 예고' },
+    c3Title: { zh: '《晒在竹匾上的小烦恼》', ko: '〈대나무 채반에 널어 둔 작은 고민〉' },
+    c3Desc: {
+      zh: '把今天皱巴巴的心情写在干橘皮上晒一晒太阳，傍晚收回来时只剩甜甜柑橘香。',
+      ko: '구겨진 마음을 마른 귤껍질에 적어 햇볕에 널어 두면, 저녁엔 달콤한 향기만 남아요.',
+    },
+    c4Title: { zh: '《谁偷喝了壶底最后一口茶》', ko: '〈주전자 마지막 한 모금은 누가 마셨을까〉' },
+    c4Desc: {
+      zh: '白瓷茶壶莫名见底，茶坡小路上留下一串暖黄色的神秘脚印，线索直指广播屋！',
+      ko: '주전자가 텅 빈 채 언덕길에 노란 발자국이 남아 있어요. 단서는 파인애플 방송집으로!',
+    },
   };
 
   const PAT_LINES = [
@@ -290,8 +487,12 @@
   const openSheetBtn = document.getElementById('openSheetBtn');
   const comicImg1 = document.getElementById('comicImg1');
   const comicImg2 = document.getElementById('comicImg2');
+  const comicImg3 = document.getElementById('comicImg3');
+  const comicImg4 = document.getElementById('comicImg4');
   const comicDl1 = document.getElementById('comicDl1');
   const comicDl2 = document.getElementById('comicDl2');
+  const comicDl3 = document.getElementById('comicDl3');
+  const comicDl4 = document.getElementById('comicDl4');
   const comicLightbox = document.getElementById('comicLightbox');
   const lightboxMediaWrap = document.getElementById('lightboxMediaWrap');
   const lightboxImg = document.getElementById('lightboxImg');
@@ -304,18 +505,174 @@
   const lightboxClose = document.getElementById('lightboxClose');
   const shortVideo1 = document.getElementById('shortVideo1');
   const shortVideo2 = document.getElementById('shortVideo2');
+  const shortVideo3 = document.getElementById('shortVideo3');
+  const shortVideo4 = document.getElementById('shortVideo4');
   const shortProg1 = document.getElementById('shortProg1');
   const shortProg2 = document.getElementById('shortProg2');
+  const shortProg3 = document.getElementById('shortProg3');
+  const shortProg4 = document.getElementById('shortProg4');
   const short1HdLink = document.getElementById('short1HdLink');
   const short2HdLink = document.getElementById('short2HdLink');
+  const short3HdLink = document.getElementById('short3HdLink');
+  const short4HdLink = document.getElementById('short4HdLink');
+  const ALL_SHORT_VIDEOS = [shortVideo1, shortVideo2, shortVideo3, shortVideo4];
   const heroLoopCanvas = document.getElementById('heroLoopCanvas');
+  const fgToast = document.getElementById('fgToast');
+  const teaSchedule = document.getElementById('teaSchedule');
+  const moodPickerStage = document.getElementById('moodPickerStage');
+  const pickedStickerImg = document.getElementById('pickedStickerImg');
+  const pickedStickerName = document.getElementById('pickedStickerName');
+  const pickedStickerQuote = document.getElementById('pickedStickerQuote');
+  const openPickedLightboxBtn = document.getElementById('openPickedLightboxBtn');
+  const downloadPickedBtn = document.getElementById('downloadPickedBtn');
+  const randomStickerBtn = document.getElementById('randomStickerBtn');
+  const copyPickedQuoteBtn = document.getElementById('copyPickedQuoteBtn');
+  const scenePickBtns = document.querySelectorAll('[data-pick-sticker]');
+  const timerPresetBtns = document.querySelectorAll('[data-timer-sec]');
+  const teaTimerRing = document.getElementById('teaTimerRing');
+  const teaTimerDisplay = document.getElementById('teaTimerDisplay');
+  const teaTimerPhase = document.getElementById('teaTimerPhase');
+  const teaTimerImg = document.getElementById('teaTimerImg');
+  const teaTimerCue = document.getElementById('teaTimerCue');
+  const teaTimerStartBtn = document.getElementById('teaTimerStartBtn');
+  const teaTimerResetBtn = document.getElementById('teaTimerResetBtn');
 
   let activeTab = 'profile';
   let activeStickerFilter = 'all';
   let lightboxState = { mode: null, comicNum: null, stickerIndex: 0 };
   let selectedExpr = 'base';
   let patIndex = 0;
+  let pickedStickerIndex = 7;
+  let toastTimer = null;
+  let timerTotalSec = 30;
+  let timerRemainSec = 30;
+  let timerState = 'idle';
+  let timerInterval = null;
   let deferredPrompt = null;
+
+  const RING_CIRCUMFERENCE = 314.16;
+
+  function showRoomToast(msg) {
+    if (!fgToast) return;
+    fgToast.textContent = msg;
+    fgToast.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => fgToast.classList.remove('is-visible'), 2400);
+  }
+
+  function copyTextWithFeedback(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => showRoomToast(TEXT.copiedToast[lang])).catch(() => showRoomToast(TEXT.copiedToast[lang]));
+    } else {
+      showRoomToast(TEXT.copiedToast[lang]);
+    }
+  }
+
+  function updateActiveScheduleSlot() {
+    if (!teaSchedule) return;
+    const h = new Date().getHours();
+    const curSlot = h >= 5 && h < 11 ? 'morning' : h >= 11 && h < 15 ? 'noon' : h >= 15 && h < 20 ? 'afternoon' : 'night';
+    teaSchedule.querySelectorAll('[data-slot]').forEach((el) => {
+      el.classList.toggle('is-now', el.getAttribute('data-slot') === curSlot);
+    });
+  }
+
+  function renderPickedSticker(animate = false) {
+    const st = STICKERS[pickedStickerIndex] || STICKERS[0];
+    const src = `./assets/stickers/${st.file}.png`;
+    if (pickedStickerImg) {
+      pickedStickerImg.src = src;
+      pickedStickerImg.alt = st[lang];
+    }
+    if (pickedStickerName) pickedStickerName.textContent = st[lang];
+    if (pickedStickerQuote) pickedStickerQuote.textContent = `「${lang === 'ko' ? st.qko : st.qzh}」`;
+    if (downloadPickedBtn) {
+      downloadPickedBtn.href = src;
+      downloadPickedBtn.setAttribute('download', `foxiaogan-${st.file}.png`);
+    }
+    if (animate && moodPickerStage) {
+      moodPickerStage.classList.remove('is-pop');
+      void moodPickerStage.offsetWidth;
+      moodPickerStage.classList.add('is-pop');
+    }
+  }
+
+  function formatTimer(sec) {
+    const m = String(Math.floor(sec / 60)).padStart(2, '0');
+    const s = String(sec % 60).padStart(2, '0');
+    return `${m}:${s}`;
+  }
+
+  function renderTeaTimer() {
+    if (!teaTimerDisplay || !teaTimerRing) return;
+    teaTimerDisplay.textContent = formatTimer(timerRemainSec);
+    const ratio = timerTotalSec > 0 ? (timerTotalSec - timerRemainSec) / timerTotalSec : 0;
+    teaTimerRing.style.strokeDashoffset = String((RING_CIRCUMFERENCE * (1 - ratio)).toFixed(2));
+
+    if (timerState === 'running') {
+      const elapsed = timerTotalSec - timerRemainSec;
+      const inhale = Math.floor(elapsed / 4) % 2 === 0;
+      if (teaTimerPhase) teaTimerPhase.textContent = inhale ? TEXT.timerInhale[lang] : TEXT.timerExhale[lang];
+      if (teaTimerCue) teaTimerCue.textContent = inhale ? TEXT.timerCueInhale[lang] : TEXT.timerCueExhale[lang];
+      if (teaTimerImg) teaTimerImg.src = './assets/expressions/happy.png';
+      if (teaTimerStartBtn) teaTimerStartBtn.textContent = TEXT.timerPauseBtn[lang];
+    } else if (timerState === 'paused') {
+      if (teaTimerPhase) teaTimerPhase.textContent = TEXT.timerPauseBtn[lang];
+      if (teaTimerImg) teaTimerImg.src = './assets/expressions/base.png';
+      if (teaTimerStartBtn) teaTimerStartBtn.textContent = TEXT.timerResumeBtn[lang];
+    } else if (timerState === 'done') {
+      if (teaTimerPhase) teaTimerPhase.textContent = TEXT.timerDonePhase[lang];
+      if (teaTimerCue) teaTimerCue.textContent = TEXT.timerDoneCue[lang];
+      if (teaTimerImg) teaTimerImg.src = './assets/expressions/proud.png';
+      if (teaTimerStartBtn) teaTimerStartBtn.textContent = TEXT.timerStartBtn[lang];
+    } else {
+      if (teaTimerPhase) teaTimerPhase.textContent = TEXT.timerReady[lang];
+      if (teaTimerCue) teaTimerCue.textContent = TEXT.timerCueIdle[lang];
+      if (teaTimerImg) teaTimerImg.src = './assets/expressions/base.png';
+      if (teaTimerStartBtn) teaTimerStartBtn.textContent = TEXT.timerStartBtn[lang];
+    }
+  }
+
+  function stopTeaTimerInterval() {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+  }
+
+  function startOrToggleTeaTimer() {
+    if (timerState === 'running') {
+      stopTeaTimerInterval();
+      timerState = 'paused';
+      renderTeaTimer();
+      return;
+    }
+    if (timerState === 'done' || timerRemainSec <= 0) {
+      timerRemainSec = timerTotalSec;
+    }
+    timerState = 'running';
+    renderTeaTimer();
+    stopTeaTimerInterval();
+    timerInterval = setInterval(() => {
+      timerRemainSec = Math.max(0, timerRemainSec - 1);
+      if (timerRemainSec <= 0) {
+        stopTeaTimerInterval();
+        timerState = 'done';
+        renderTeaTimer();
+        showRoomToast(TEXT.timerDoneToast[lang]);
+      } else {
+        renderTeaTimer();
+      }
+    }, 1000);
+  }
+
+  function resetTeaTimer(newSec = timerTotalSec) {
+    stopTeaTimerInterval();
+    timerTotalSec = newSec;
+    timerRemainSec = newSec;
+    timerState = 'idle';
+    renderTeaTimer();
+  }
 
   function getTodayKey() {
     const d = new Date();
@@ -402,6 +759,8 @@
     const items = [
       { video: shortVideo1, hd: short1HdLink, id: 'short01' },
       { video: shortVideo2, hd: short2HdLink, id: 'short02' },
+      { video: shortVideo3, hd: short3HdLink, id: 'short03' },
+      { video: shortVideo4, hd: short4HdLink, id: 'short04' },
     ];
     items.forEach(({ video, hd, id }) => {
       if (!video) return;
@@ -469,6 +828,8 @@
     const comics = [
       { img: comicImg1, dl: comicDl1, num: '01' },
       { img: comicImg2, dl: comicDl2, num: '02' },
+      { img: comicImg3, dl: comicDl3, num: '03' },
+      { img: comicImg4, dl: comicDl4, num: '04' },
     ];
     comics.forEach(({ img, dl, num }) => {
       const src = `./comics/comic${num}-${suffix}.jpg`;
@@ -508,6 +869,7 @@
     });
 
     updateTimeGreeting();
+    updateActiveScheduleSlot();
     heroSpeech.textContent = PAT_LINES[patIndex][lang];
 
     const curItem = EXPR_ITEMS.find((e) => e.key === selectedExpr);
@@ -515,7 +877,9 @@
 
     refreshLiveStats();
     renderExprGrid();
+    renderPickedSticker(false);
     renderStickerGrid();
+    renderTeaTimer();
     syncShortsLanguage();
     syncComicsLanguage();
     window.dispatchEvent(new CustomEvent('foshou-lang-change', { detail: { lang } }));
@@ -549,10 +913,15 @@
       if (panelComics) panelComics.classList.toggle('hidden', tab !== 'comics');
       panelProfile.classList.toggle('hidden', tab !== 'profile');
 
-      [shortVideo1, shortVideo2].forEach((vid) => {
+      ALL_SHORT_VIDEOS.forEach((vid, idx) => {
         if (!vid) return;
         if (tab === 'shorts') {
-          vid.play().then(() => updatePlayVisual(vid)).catch(() => updatePlayVisual(vid));
+          if (idx < 2) {
+            vid.play().then(() => updatePlayVisual(vid)).catch(() => updatePlayVisual(vid));
+          } else {
+            vid.pause();
+            updatePlayVisual(vid);
+          }
         } else {
           vid.pause();
           updatePlayVisual(vid);
@@ -561,6 +930,27 @@
     });
   });
 
+  if ('IntersectionObserver' in window) {
+    const shortObserver = new IntersectionObserver(
+      (entries) => {
+        if (activeTab !== 'shorts') return;
+        entries.forEach((entry) => {
+          const vid = entry.target;
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
+            vid.play().then(() => updatePlayVisual(vid)).catch(() => updatePlayVisual(vid));
+          } else if (!vid.paused && vid.muted) {
+            vid.pause();
+            updatePlayVisual(vid);
+          }
+        });
+      },
+      { threshold: [0.2, 0.45] }
+    );
+    ALL_SHORT_VIDEOS.forEach((vid) => {
+      if (vid) shortObserver.observe(vid);
+    });
+  }
+
   document.querySelectorAll('[data-toggle-mute]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.stopPropagation();
@@ -568,8 +958,14 @@
       if (!vid) return;
       const willUnmute = vid.muted;
       if (willUnmute) {
-        [shortVideo1, shortVideo2].forEach((other) => {
-          if (other && other !== vid) other.muted = true;
+        ALL_SHORT_VIDEOS.forEach((other) => {
+          if (other && other !== vid) {
+            other.muted = true;
+            if (!other.paused) {
+              other.pause();
+              updatePlayVisual(other);
+            }
+          }
         });
       }
       vid.muted = !willUnmute;
@@ -605,6 +1001,8 @@
   [
     { vid: shortVideo1, prog: shortProg1 },
     { vid: shortVideo2, prog: shortProg2 },
+    { vid: shortVideo3, prog: shortProg3 },
+    { vid: shortVideo4, prog: shortProg4 },
   ].forEach(({ vid, prog }) => {
     if (!vid) return;
     vid.addEventListener('play', () => updatePlayVisual(vid));
@@ -727,16 +1125,29 @@
 
   function openComicLightbox(num) {
     const suffix = lang === 'ko' ? 'ko' : 'zh';
-    const title = num === '1' ? TEXT.comic1Title[lang] : TEXT.comic2Title[lang];
-    lightboxState = { mode: 'comic', comicNum: num, stickerIndex: 0 };
+    const safeNum = String(((Number(num) - 1 + 4) % 4) + 1);
+    const titleMap = {
+      '1': TEXT.comic1Title,
+      '2': TEXT.comic2Title,
+      '3': TEXT.comic3Title,
+      '4': TEXT.comic4Title,
+    };
+    const title = (titleMap[safeNum] || TEXT.comic1Title)[lang];
+    const src = `./comics/comic0${safeNum}-${suffix}.jpg`;
+    lightboxState = { mode: 'comic', comicNum: safeNum, stickerIndex: 0 };
     if (lightboxMediaWrap) lightboxMediaWrap.classList.remove('is-sticker');
     if (lightboxImg) {
-      lightboxImg.src = `./comics/comic0${num}-${suffix}.jpg`;
+      lightboxImg.src = src;
       lightboxImg.alt = title;
     }
-    if (lightboxCaption) lightboxCaption.textContent = title;
+    if (lightboxCaption) lightboxCaption.textContent = `${title}  (NO.0${safeNum} / 04)`;
     if (lightboxQuote) lightboxQuote.classList.add('hidden');
-    if (lightboxStickerControls) lightboxStickerControls.classList.add('hidden');
+    if (lbDownloadBtn) {
+      lbDownloadBtn.href = src;
+      lbDownloadBtn.setAttribute('download', `foxiaogan-comic0${safeNum}-${suffix}.jpg`);
+      lbDownloadBtn.textContent = TEXT.downloadComic[lang];
+    }
+    if (lightboxStickerControls) lightboxStickerControls.classList.remove('hidden');
     showLightboxModal();
   }
 
@@ -773,6 +1184,7 @@
     if (lbDownloadBtn) {
       lbDownloadBtn.href = src;
       lbDownloadBtn.setAttribute('download', `foxiaogan-${st.file}.png`);
+      lbDownloadBtn.textContent = TEXT.downloadSingleSticker[lang];
     }
     if (lightboxStickerControls) lightboxStickerControls.classList.remove('hidden');
     showLightboxModal();
@@ -793,13 +1205,21 @@
   if (lbPrevBtn) {
     lbPrevBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      openStickerLightbox(lightboxState.stickerIndex - 1);
+      if (lightboxState.mode === 'comic' && lightboxState.comicNum) {
+        openComicLightbox(Number(lightboxState.comicNum) - 1);
+      } else {
+        openStickerLightbox(lightboxState.stickerIndex - 1);
+      }
     });
   }
   if (lbNextBtn) {
     lbNextBtn.addEventListener('click', (e) => {
       e.stopPropagation();
-      openStickerLightbox(lightboxState.stickerIndex + 1);
+      if (lightboxState.mode === 'comic' && lightboxState.comicNum) {
+        openComicLightbox(Number(lightboxState.comicNum) + 1);
+      } else {
+        openStickerLightbox(lightboxState.stickerIndex + 1);
+      }
     });
   }
 
@@ -819,6 +1239,12 @@
       }
       if (lightboxState.mode === 'sticker' && e.key === 'ArrowRight') {
         openStickerLightbox(lightboxState.stickerIndex + 1);
+      }
+      if (lightboxState.mode === 'comic' && lightboxState.comicNum && e.key === 'ArrowLeft') {
+        openComicLightbox(Number(lightboxState.comicNum) - 1);
+      }
+      if (lightboxState.mode === 'comic' && lightboxState.comicNum && e.key === 'ArrowRight') {
+        openComicLightbox(Number(lightboxState.comicNum) + 1);
       }
     }
   });
@@ -860,7 +1286,7 @@
   window.addEventListener('focus', refreshLiveStats);
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-      [shortVideo1, shortVideo2].forEach((vid) => {
+      ALL_SHORT_VIDEOS.forEach((vid) => {
         if (vid && !vid.paused) {
           vid.pause();
           updatePlayVisual(vid);
@@ -868,9 +1294,52 @@
       });
     } else {
       updateTimeGreeting();
+      updateActiveScheduleSlot();
       refreshLiveStats();
     }
   });
+
+  if (randomStickerBtn) {
+    randomStickerBtn.addEventListener('click', () => {
+      let nextIdx = Math.floor(Math.random() * STICKERS.length);
+      if (nextIdx === pickedStickerIndex) nextIdx = (nextIdx + 1) % STICKERS.length;
+      pickedStickerIndex = nextIdx;
+      renderPickedSticker(true);
+    });
+  }
+
+  scenePickBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const idx = Number(btn.getAttribute('data-pick-sticker'));
+      if (!Number.isNaN(idx) && STICKERS[idx]) {
+        pickedStickerIndex = idx;
+        renderPickedSticker(true);
+      }
+    });
+  });
+
+  if (openPickedLightboxBtn) {
+    openPickedLightboxBtn.addEventListener('click', () => openStickerLightbox(pickedStickerIndex));
+  }
+
+  if (copyPickedQuoteBtn) {
+    copyPickedQuoteBtn.addEventListener('click', () => {
+      const st = STICKERS[pickedStickerIndex] || STICKERS[0];
+      const prefix = lang === 'ko' ? '불소감: ' : '佛小柑：';
+      copyTextWithFeedback(`${prefix}${lang === 'ko' ? st.qko : st.qzh}`);
+    });
+  }
+
+  timerPresetBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const sec = Number(btn.getAttribute('data-timer-sec')) || 30;
+      timerPresetBtns.forEach((b) => b.classList.toggle('active', b === btn));
+      resetTeaTimer(sec);
+    });
+  });
+
+  if (teaTimerStartBtn) teaTimerStartBtn.addEventListener('click', startOrToggleTeaTimer);
+  if (teaTimerResetBtn) teaTimerResetBtn.addEventListener('click', () => resetTeaTimer(timerTotalSec));
 
   applyI18n();
 })();

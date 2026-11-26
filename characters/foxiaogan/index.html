@@ -83,7 +83,7 @@
       <button type="button" class="tab-btn" role="tab" aria-selected="false" data-tab="comics" data-i18n="tabComics">📖 漫画</button>
     </nav>
 
-    <!-- Tab 1: Character Profile & Expressions (2-column bento on desktop) -->
+    <!-- Tab 1: Character Profile, Expressions, Daily Schedule & Neighbors -->
     <section class="tab-panel" id="panel-profile">
       <div class="profile-bento">
         <article class="profile-card">
@@ -149,10 +149,155 @@
           <div class="expr-grid" id="exprGrid"></div>
         </article>
       </div>
+
+      <!-- Profile Bottom Row: Daily Tea Hill Routine + Neighbor Tea Bonds -->
+      <div class="fg-extra-grid">
+        <article class="profile-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="schedBadge">风车茶坡日常</span>
+            <span class="ep-tag">DAILY TEA</span>
+          </div>
+          <h2 class="section-title" data-i18n="schedTitle">佛小柑的茶坡时刻表</h2>
+          <p class="short-desc" data-i18n="schedLead">按风车转动的速度过一天，当前时段会悄悄亮起暖光。</p>
+
+          <ol class="tea-schedule" id="teaSchedule">
+            <li class="tea-slot" data-slot="morning">
+              <div class="tea-slot__rail">
+                <span class="tea-slot__time">07:30</span>
+                <span class="tea-slot__now" data-i18n="slotNowBadge">此刻</span>
+              </div>
+              <div class="tea-slot__body">
+                <strong data-i18n="slot1Title">晨雾收露 · 晒茶竹匾开窗</strong>
+                <p data-i18n="slot1Desc">趁太阳还不晒，先把昨夜采来的嫩叶与佛手干片摊在风车下。</p>
+              </div>
+            </li>
+            <li class="tea-slot" data-slot="noon">
+              <div class="tea-slot__rail">
+                <span class="tea-slot__time">12:00</span>
+                <span class="tea-slot__now" data-i18n="slotNowBadge">此刻</span>
+              </div>
+              <div class="tea-slot__body">
+                <strong data-i18n="slot2Title">午间翻晒 · 给果皮做日光浴</strong>
+                <p data-i18n="slot2Desc">把皱巴巴的小烦恼写在干橘皮上，翻面晒到清香四溢。</p>
+              </div>
+            </li>
+            <li class="tea-slot" data-slot="afternoon">
+              <div class="tea-slot__rail">
+                <span class="tea-slot__time">15:30</span>
+                <span class="tea-slot__now" data-i18n="slotNowBadge">此刻</span>
+              </div>
+              <div class="tea-slot__body">
+                <strong data-i18n="slot3Title">60°C 慢泡 · 接待串门邻居</strong>
+                <p data-i18n="slot3Desc">温水慢慢冲开第一壶金佛手茶，谁路过风车茶坡都可以蹭一杯。</p>
+              </div>
+            </li>
+            <li class="tea-slot" data-slot="night">
+              <div class="tea-slot__rail">
+                <span class="tea-slot__time">21:00</span>
+                <span class="tea-slot__now" data-i18n="slotNowBadge">此刻</span>
+              </div>
+              <div class="tea-slot__body">
+                <strong data-i18n="slot4Title">藤椅听水车 · 伴着果香充会儿电</strong>
+                <p data-i18n="slot4Desc">关掉闹钟听溪边水车哒哒转动，什么都不催，慢慢进入梦乡。</p>
+              </div>
+            </li>
+          </ol>
+        </article>
+
+        <article class="profile-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="bondsBadge">茶缘手账</span>
+            <span class="ep-tag">TOWN BONDS</span>
+          </div>
+          <h2 class="section-title" data-i18n="bondsTitle">茶坡上的常客邻居</h2>
+          <p class="short-desc" data-i18n="bondsLead">风车茶坡永远为邻居温着一壶茶，点任意一位就能去对方房间串门。</p>
+          <div class="tea-bonds-list">
+            <a class="tea-bond-item" href="../../room.html?role=pomelo">
+              <span class="tea-bond-avatar">
+                <img src="../../assets/char-pomelo.png" alt="呆呆柚" width="44" height="52" loading="lazy" />
+              </span>
+              <div class="tea-bond-copy">
+                <strong data-i18n="bond1Name">呆呆柚 · 溪畔木桥</strong>
+                <p data-i18n="bond1Desc">最合拍的发呆茶友，两人能端着杯子一整个下午不说一句话。</p>
+              </div>
+              <span class="tea-bond-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="tea-bond-item" href="../../room.html?role=pineapple">
+              <span class="tea-bond-avatar">
+                <img src="../../assets/char-pineapple.png" alt="菠大炮" width="44" height="52" loading="lazy" />
+              </span>
+              <div class="tea-bond-copy">
+                <strong data-i18n="bond2Name">菠大炮 · 菠萝广播屋</strong>
+                <p data-i18n="bond2Desc">每天播音后都会来讨一杯 60°C 润喉茶，顺便分享今天的新歌单。</p>
+              </div>
+              <span class="tea-bond-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="tea-bond-item" href="../../room.html?role=peach">
+              <span class="tea-bond-avatar">
+                <img src="../../assets/char-peach.png" alt="举重桃" width="44" height="52" loading="lazy" />
+              </span>
+              <div class="tea-bond-copy">
+                <strong data-i18n="bond3Name">举重桃 · 蜜桃训练屋</strong>
+                <p data-i18n="bond3Desc">练完杠铃嘴上说不累，但闻到茶香就会乖乖坐下来喝两口歇脚。</p>
+              </div>
+              <span class="tea-bond-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="tea-bond-item" href="../../room.html?role=strawberry">
+              <span class="tea-bond-avatar">
+                <img src="../../assets/char-strawberry.png" alt="草莓菜" width="44" height="52" loading="lazy" />
+              </span>
+              <div class="tea-bond-copy">
+                <strong data-i18n="bond4Name">草莓菜 · 小白菜花园</strong>
+                <p data-i18n="bond4Desc">雨天常躲进茶坡木棚烤干小白菜背包，一起分一壶热腾腾的果茶。</p>
+              </div>
+              <span class="tea-bond-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- Tab 2: Stickers Tab (24 Transparent Expression Stickers + Full Sheet) -->
+    <!-- Tab 2: Stickers Tab (Interactive Mood Picker + 24 Transparent Stickers + Full Sheet) -->
     <section class="tab-panel hidden" id="panel-stickers">
+      <!-- New Interactive Mood Sticker Picker -->
+      <article class="sticker-card mood-picker-card">
+        <div class="short-card-head">
+          <span class="badge-pill badge-b" data-i18n="pickerBadge">互动抽签 · 零压力</span>
+          <span class="ep-tag">MOOD PICK</span>
+        </div>
+        <div class="mood-picker-layout">
+          <div class="mood-picker-left">
+            <h2 class="short-title" data-i18n="pickerTitle">抽一枚此刻心情贴纸</h2>
+            <p class="short-desc" data-i18n="pickerDesc">不知道发什么回复给朋友？选一个此刻状态，或者让佛小柑随机替你挑一枚透明贴纸。</p>
+
+            <div class="scene-chips" role="group" aria-label="聊天常用场景">
+              <button type="button" class="scene-chip" data-pick-sticker="6" data-i18n="sceneGreet">☀️ 早安打招呼</button>
+              <button type="button" class="scene-chip" data-pick-sticker="7" data-i18n="sceneTea">🍵 约喝一杯茶</button>
+              <button type="button" class="scene-chip" data-pick-sticker="11" data-i18n="sceneMeeting">😤 拒绝临时加会</button>
+              <button type="button" class="scene-chip" data-pick-sticker="20" data-i18n="sceneRelax">🌿 下班慢慢躺</button>
+              <button type="button" class="scene-chip" data-pick-sticker="13" data-i18n="sceneCheer">💛 给朋友打气</button>
+            </div>
+
+            <div class="mood-picker-actions">
+              <button type="button" class="hero-btn-primary" id="randomStickerBtn" data-i18n="pickerDrawBtn">✦ 随机抽一枚贴纸</button>
+              <button type="button" class="hero-btn-ghost" id="copyPickedQuoteBtn" data-i18n="pickerCopyBtn">复制这句台词</button>
+            </div>
+          </div>
+
+          <div class="mood-picker-stage" id="moodPickerStage">
+            <img id="pickedStickerImg" src="./assets/stickers/08_tea.png" alt="喝茶" width="118" height="118" />
+            <div class="mood-picker-info">
+              <strong id="pickedStickerName">喝茶</strong>
+              <p id="pickedStickerQuote">「吨吨吨～60°C 佛手茶最香啦！」</p>
+              <div class="mood-picker-links">
+                <button type="button" class="mini-link-btn" id="openPickedLightboxBtn" data-i18n="pickerZoomBtn">查看大图</button>
+                <a class="mini-link-btn" id="downloadPickedBtn" href="./assets/stickers/08_tea.png" download="foxiaogan-08_tea.png" data-i18n="pickerSaveBtn">⬇ 保存 PNG</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
       <article class="sticker-card">
         <div class="short-card-head">
           <span class="badge-pill badge-a" data-i18n="stickerPackBadge">表情包 · 24 款</span>
@@ -189,7 +334,7 @@
       </article>
     </section>
 
-    <!-- Tab 3: Apps Tab -->
+    <!-- Tab 3: Apps Tab (App A, App B + New 60°C Tea Steep Timer + 3 Tea Recipes) -->
     <main class="tab-panel hidden" id="panel-apps">
       <div class="app-cards">
         <!-- App A: Record App -->
@@ -260,6 +405,80 @@
         </article>
       </div>
 
+      <!-- New Built-in Interactive Tool + Tea Recipes -->
+      <div class="fg-extra-grid">
+        <article class="app-card tea-timer-card">
+          <div class="app-card-top">
+            <span class="badge-pill badge-b" data-i18n="timerBadge">房内小工具</span>
+            <span class="ep-tag">60°C TIMER</span>
+          </div>
+          <h2 class="app-name" data-i18n="timerTitle">60°C 泡茶呼吸计时器</h2>
+          <p class="short-desc" data-i18n="timerDesc">趁温水舒展茶叶的间隙，跟着佛小柑慢慢呼吸、放松一下肩膀。</p>
+
+          <div class="timer-presets" role="group" aria-label="计时时长选择">
+            <button type="button" class="filter-chip active" data-timer-sec="30" data-i18n="timer30s">30 秒喘口气</button>
+            <button type="button" class="filter-chip" data-timer-sec="60" data-i18n="timer60s">1 分钟慢泡</button>
+            <button type="button" class="filter-chip" data-timer-sec="180" data-i18n="timer180s">3 分钟静心</button>
+          </div>
+
+          <div class="timer-stage">
+            <div class="timer-ring-wrap">
+              <svg class="timer-ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+                <circle class="timer-ring-bg" cx="60" cy="60" r="50"></circle>
+                <circle class="timer-ring-fg" id="teaTimerRing" cx="60" cy="60" r="50" stroke-dasharray="314.16" stroke-dashoffset="0"></circle>
+              </svg>
+              <div class="timer-readout">
+                <strong id="teaTimerDisplay">00:30</strong>
+                <span id="teaTimerPhase" data-i18n="timerReady">准备泡茶</span>
+              </div>
+            </div>
+
+            <div class="timer-companion">
+              <img id="teaTimerImg" src="./assets/expressions/base.png" alt="佛小柑" width="66" height="88" />
+              <p id="teaTimerCue" data-i18n="timerCueIdle">调好 60°C 温水，按下开始一起慢呼吸吧～</p>
+            </div>
+          </div>
+
+          <div class="timer-controls">
+            <button type="button" class="hero-btn-primary" id="teaTimerStartBtn" data-i18n="timerStartBtn">✦ 开始泡茶计时</button>
+            <button type="button" class="hero-btn-ghost" id="teaTimerResetBtn" data-i18n="timerResetBtn">重置</button>
+          </div>
+        </article>
+
+        <article class="app-card">
+          <div class="app-card-top">
+            <span class="badge-pill badge-a" data-i18n="recipesBadge">茶坡配方笺</span>
+            <span class="ep-tag">3 RECIPES</span>
+          </div>
+          <h2 class="app-name" data-i18n="recipesTitle">佛小柑的 3 道暖心茶方</h2>
+          <p class="short-desc" data-i18n="recipesLead">不讲究繁琐茶道，只要一杯热乎乎、喝着舒服就好。</p>
+
+          <div class="recipe-list">
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="rec1Name">01 · 经典 60°C 金佛手温茶</strong>
+                <span class="ep-tag">60°C · 2min</span>
+              </div>
+              <p data-i18n="rec1Desc">2 片干佛手配清甜温水，微甘不涩，最适合早起润喉。</p>
+            </div>
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="rec2Name">02 · 午后清风薄荷柑皮饮</strong>
+                <span class="ep-tag">65°C · 3min</span>
+              </div>
+              <p data-i18n="rec2Desc">下午三点犯困时的温柔替代，清爽柑橘香悄悄赶走疲惫。</p>
+            </div>
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="rec3Name">03 · 晚安洋甘菊佛手暖茶</strong>
+                <span class="ep-tag">60°C · 3min</span>
+              </div>
+              <p data-i18n="rec3Desc">零咖啡因睡前伴侣，捧在手里暖一暖掌心，准备安心入梦。</p>
+            </div>
+          </div>
+        </article>
+      </div>
+
       <!-- Compact Collapsible PWA Install Guide -->
       <details class="pwa-tip-card">
         <summary class="pwa-summary" data-i18n="pwaTitle">📲 添加到手机主屏（像原生 App 一样使用）</summary>
@@ -267,7 +486,7 @@
       </details>
     </main>
 
-    <!-- Tab 4: Shorts Tab -->
+    <!-- Tab 4: Shorts Tab (2 Videos + Quotes Strip + Upcoming EP.03/04 Teasers) -->
     <section class="tab-panel hidden" id="panel-shorts">
       <div class="shorts-feed">
         <!-- Short 01 -->
@@ -339,10 +558,107 @@
             <a id="short2HdLink" class="short-action-link" href="./shorts/deliverables/foshou-short02-zh.mp4" download data-i18n="downloadHd">⬇ 下载高清视频</a>
           </div>
         </article>
+
+        <!-- Short 03 -->
+        <article class="short-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="short3Badge">漫画短片 · 15秒</span>
+            <span class="ep-tag">EP.03</span>
+          </div>
+          <h2 class="short-title" data-i18n="short3Title">今晚十点，准时睡觉！</h2>
+          <p class="short-desc" data-i18n="short3Desc">睡前立下早睡 flag，喝完安神茶绝不看手机……结果凌晨两点十五分还在被窝刷泡茶法！</p>
+
+          <div class="short-stage is-paused" data-stage-video="shortVideo3">
+            <video
+              id="shortVideo3"
+              class="short-video"
+              src="./shorts/web/foshou-short03-zh-720.mp4"
+              poster="./shorts/deliverables/foshou-short03-cover-zh.png"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            ></video>
+            <div class="short-paused-badge" aria-hidden="true">▶</div>
+            <div class="short-overlay-controls">
+              <button type="button" class="short-ctl-btn" data-toggle-mute="shortVideo3" aria-label="切换声音">🔇 <span data-i18n="soundMuted">静音</span></button>
+              <button type="button" class="short-ctl-btn" data-toggle-play="shortVideo3" aria-label="播放或暂停">▶</button>
+            </div>
+            <div class="short-progress-track" aria-hidden="true">
+              <div class="short-progress-fill" id="shortProg3"></div>
+            </div>
+          </div>
+
+          <div class="short-actions">
+            <a id="short3HdLink" class="short-action-link" href="./shorts/deliverables/foshou-short03-zh.mp4" download data-i18n="downloadHd">⬇ 下载高清视频</a>
+          </div>
+        </article>
+
+        <!-- Short 04 -->
+        <article class="short-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="short4Badge">日常 POV · 9秒</span>
+            <span class="ep-tag">EP.04</span>
+          </div>
+          <h2 class="short-title" data-i18n="short4Title">闹钟没响惊醒，结果今天是周日?!</h2>
+          <p class="short-desc" data-i18n="short4Desc">以为睡过头早八要迟到了，抬头一看台历原来是周日——慢慢来，先泡杯 60°C 温茶再继续躺！</p>
+
+          <div class="short-stage is-paused" data-stage-video="shortVideo4">
+            <video
+              id="shortVideo4"
+              class="short-video"
+              src="./shorts/web/foshou-short04-zh-720.mp4"
+              poster="./shorts/deliverables/foshou-short04-cover-zh.png"
+              playsinline
+              muted
+              loop
+              preload="metadata"
+            ></video>
+            <div class="short-paused-badge" aria-hidden="true">▶</div>
+            <div class="short-overlay-controls">
+              <button type="button" class="short-ctl-btn" data-toggle-mute="shortVideo4" aria-label="切换声音">🔇 <span data-i18n="soundMuted">静音</span></button>
+              <button type="button" class="short-ctl-btn" data-toggle-play="shortVideo4" aria-label="播放或暂停">▶</button>
+            </div>
+            <div class="short-progress-track" aria-hidden="true">
+              <div class="short-progress-fill" id="shortProg4"></div>
+            </div>
+          </div>
+
+          <div class="short-actions">
+            <a id="short4HdLink" class="short-action-link" href="./shorts/deliverables/foshou-short04-zh.mp4" download data-i18n="downloadHd">⬇ 下载高清视频</a>
+          </div>
+        </article>
       </div>
+
+      <!-- New Shorts Extras: Upcoming Storyboard Teasers -->
+      <article class="short-card upcoming-wide-card">
+        <div class="short-card-head">
+          <span class="badge-pill badge-b" data-i18n="teaserBadge">下集筹备预告</span>
+          <span class="ep-tag">UPCOMING</span>
+        </div>
+        <h2 class="short-title" data-i18n="shortTeaserTitle">风车茶坡 · 正在画的新短片</h2>
+        <div class="teaser-list teaser-list--duo">
+          <div class="teaser-item">
+            <img src="./assets/stickers/21_relax.png" alt="" width="54" height="54" loading="lazy" />
+            <div>
+              <span class="ep-tag">EP.05</span>
+              <strong data-i18n="ep3Title">《风车转慢了一拍》</strong>
+              <p data-i18n="ep3Desc">呆呆柚上坡发呆，连风车叶片和飘散的茶香也跟着慢成 0.5 倍速。</p>
+            </div>
+          </div>
+          <div class="teaser-item">
+            <img src="./assets/stickers/08_tea.png" alt="" width="54" height="54" loading="lazy" />
+            <div>
+              <span class="ep-tag">EP.06</span>
+              <strong data-i18n="ep4Title">《雨天木棚里的双人壶》</strong>
+              <p data-i18n="ep4Desc">突如其来的阵雨里，替淋湿的草莓菜烤干小白菜背包，一起分一壶暖茶。</p>
+            </div>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <!-- Tab 5: Comics Tab -->
+    <!-- Tab 5: Comics Tab (4 Comics + Extended Tea Notes + Upcoming NO.05/06 Sketchbook) -->
     <section class="tab-panel hidden" id="panel-comics">
       <div class="comics-feed">
         <!-- Comic 01 -->
@@ -380,6 +696,111 @@
 
           <div class="short-actions">
             <a id="comicDl2" class="short-action-link" href="./comics/comic02-zh.jpg" download="foxiaogan-comic02-zh.jpg" data-i18n="downloadComic">⬇ 保存漫画图片</a>
+          </div>
+        </article>
+
+        <!-- Comic 03 -->
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="comic3Badge">四格漫画 · 第 3 话</span>
+            <span class="ep-tag">NO.03</span>
+          </div>
+          <h2 class="short-title" data-i18n="comic3Title">今晚一定要早睡！</h2>
+          <p class="short-desc" data-i18n="comic3Desc">喝完安神茶把手机反扣桌面，信誓旦旦十点睡——直到凌晨 02:15 被窝亮起熟悉微光……</p>
+
+          <button type="button" class="comic-frame-btn" data-open-comic="3" data-i18n-aria="comicZoomHint" aria-label="查看大图">
+            <img id="comicImg3" class="comic-img" src="./comics/comic03-zh.jpg" alt="佛小柑四格漫画第3话" loading="lazy" />
+            <span class="comic-zoom-hint" data-i18n="comicZoomHint">🔍 点击查看大图</span>
+          </button>
+
+          <div class="short-actions">
+            <a id="comicDl3" class="short-action-link" href="./comics/comic03-zh.jpg" download="foxiaogan-comic03-zh.jpg" data-i18n="downloadComic">⬇ 保存漫画图片</a>
+          </div>
+        </article>
+
+        <!-- Comic 04 -->
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="comic4Badge">四格漫画 · 第 4 话</span>
+            <span class="ep-tag">NO.04</span>
+          </div>
+          <h2 class="short-title" data-i18n="comic4Title">茶叶放久了怎么没香味了？</h2>
+          <p class="short-desc" data-i18n="comic4Desc">透明罐晒太阳又挨着热蒸汽？佛小柑的锁香干货：避光密封放阴凉处，远离水汽才留香！</p>
+
+          <button type="button" class="comic-frame-btn" data-open-comic="4" data-i18n-aria="comicZoomHint" aria-label="查看大图">
+            <img id="comicImg4" class="comic-img" src="./comics/comic04-zh.jpg" alt="佛小柑四格漫画第4话" loading="lazy" />
+            <span class="comic-zoom-hint" data-i18n="comicZoomHint">🔍 点击查看大图</span>
+          </button>
+
+          <div class="short-actions">
+            <a id="comicDl4" class="short-action-link" href="./comics/comic04-zh.jpg" download="foxiaogan-comic04-zh.jpg" data-i18n="downloadComic">⬇ 保存漫画图片</a>
+          </div>
+        </article>
+      </div>
+
+      <!-- New Comics Extras: Author's Tea Notes + Upcoming NO.05/06 Sketchbook -->
+      <div class="fg-extra-grid">
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-a" data-i18n="notesBadge">漫画延伸手记</span>
+            <span class="ep-tag">TEA NOTES</span>
+          </div>
+          <h2 class="short-title" data-i18n="notesTitle">读完四格 · 佛小柑的泡茶小抄</h2>
+          <div class="recipe-list">
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="note1Title">第 1 话延伸 · 睡回笼觉也不必自责</strong>
+                <span class="ep-tag">NO.01</span>
+              </div>
+              <p data-i18n="note1Desc">冥想睡着说明身体真的很想充电，醒来伸个大懒腰、喝两口温水就已经满分啦。</p>
+            </div>
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="note2Title">第 2 话延伸 · 为什么 60°C 温水最清香？</strong>
+                <span class="ep-tag">NO.02</span>
+              </div>
+              <p data-i18n="note2Desc">滚烫开水会把柑橘表皮的苦味素瞬间烫出，用略烫手又可入口的 60°C 慢泡，果香才最柔和。</p>
+            </div>
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="note3Title">第 3 话延伸 · 睡前少刷屏的小窍门</strong>
+                <span class="ep-tag">NO.03</span>
+              </div>
+              <p data-i18n="note3Desc">给手机在书桌留一个“睡前小床”，把手机放在够不着的充电处，自然就更容易早点合眼啦。</p>
+            </div>
+            <div class="recipe-item">
+              <div class="recipe-item__head">
+                <strong data-i18n="note4Title">第 4 话延伸 · 干茶叶与柑片怎么保存？</strong>
+                <span class="ep-tag">NO.04</span>
+              </div>
+              <p data-i18n="note4Desc">干茶叶极易吸湿吸味，选不透光的密封陶瓷罐或铁罐放阴凉橱柜，远离烧水壶和阳光直射即可。</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="comic-card">
+          <div class="short-card-head">
+            <span class="badge-pill badge-b" data-i18n="comicNextBadge">下话草稿本</span>
+            <span class="ep-tag">COMING SOON</span>
+          </div>
+          <h2 class="short-title" data-i18n="comicNextTitle">四格漫画 · 连载分镜预告</h2>
+          <div class="teaser-list">
+            <div class="teaser-item">
+              <img src="./assets/stickers/17_think.png" alt="" width="54" height="54" loading="lazy" />
+              <div>
+                <span class="ep-tag">NO.05</span>
+                <strong data-i18n="c3Title">《晒在竹匾上的小烦恼》</strong>
+                <p data-i18n="c3Desc">把今天皱巴巴的心情写在干橘皮上晒一晒太阳，傍晚收回来时只剩甜甜柑橘香。</p>
+              </div>
+            </div>
+            <div class="teaser-item">
+              <img src="./assets/stickers/10_confused.png" alt="" width="54" height="54" loading="lazy" />
+              <div>
+                <span class="ep-tag">NO.06</span>
+                <strong data-i18n="c4Title">《谁偷喝了壶底最后一口茶》</strong>
+                <p data-i18n="c4Desc">白瓷茶壶莫名见底，茶坡小路上留下一串暖黄色的神秘脚印，线索直指广播屋！</p>
+              </div>
+            </div>
           </div>
         </article>
       </div>
@@ -440,6 +861,9 @@
       <p data-i18n="footerTip">✨ 点一下或拖起底部散步的佛小柑试试吧～</p>
     </footer>
   </div>
+
+  <!-- Subtle Room Toast for Copy & Timer Completion -->
+  <div class="fg-toast" id="fgToast" role="status" aria-live="polite"></div>
 
   <!-- Full-Screen Lightbox (Comics, Sticker Sheet & Individual Stickers) -->
   <div class="comic-lightbox hidden" id="comicLightbox" role="dialog" aria-modal="true" data-i18n-aria="ariaLightbox" aria-label="大图预览">

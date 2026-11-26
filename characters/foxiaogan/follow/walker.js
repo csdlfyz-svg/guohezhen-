@@ -70,21 +70,33 @@
     .fw-bubble.show { opacity: 1; }
     .fw-toggle {
       position: fixed;
-      right: 14px;
-      bottom: 14px;
+      right: 16px;
+      bottom: 16px;
       z-index: 42;
-      min-height: 34px;
-      padding: 0 12px;
+      min-height: 36px;
+      padding: 0 14px;
       border-radius: var(--radius-pill);
-      border: 1.5px solid var(--fg-border-strong);
-      background: var(--fg-card-translucent);
-      backdrop-filter: blur(8px);
-      color: var(--fg-ink);
+      border: 1px solid var(--fg-border-strong);
+      background: var(--fg-grad-bar-glass);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--fg-ink-muted);
       font-family: inherit;
-      font-size: 11.5px;
+      font-size: 12px;
       font-weight: 800;
       cursor: pointer;
-      box-shadow: var(--fg-shadow-sm);
+      box-shadow: var(--fg-shadow-sm), var(--fg-shadow-inset-white);
+      transition: transform 0.16s var(--ease-spring), color 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+    }
+    .fw-toggle:hover {
+      color: var(--fg-ink);
+      border-color: var(--fg-border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--fg-shadow-md);
+    }
+    .fw-toggle:focus-visible {
+      outline: none;
+      box-shadow: var(--fg-focus-ring);
     }
   `;
   document.head.appendChild(style);

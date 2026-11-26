@@ -1,4 +1,4 @@
-const CACHE_NAME = 'foshou-room-v15';
+const CACHE_NAME = 'foshou-room-v20';
 const ASSETS = [
   './',
   './index.html',
@@ -12,10 +12,18 @@ const ASSETS = [
   './comics/comic01-ko.jpg',
   './comics/comic02-zh.jpg',
   './comics/comic02-ko.jpg',
+  './comics/comic03-zh.jpg',
+  './comics/comic03-ko.jpg',
+  './comics/comic04-zh.jpg',
+  './comics/comic04-ko.jpg',
   './shorts/deliverables/foshou-short01-cover-zh.png',
   './shorts/deliverables/foshou-short01-cover-ko.png',
   './shorts/deliverables/foshou-short02-cover-zh.png',
   './shorts/deliverables/foshou-short02-cover-ko.png',
+  './shorts/deliverables/foshou-short03-cover-zh.png',
+  './shorts/deliverables/foshou-short03-cover-ko.png',
+  './shorts/deliverables/foshou-short04-cover-zh.png',
+  './shorts/deliverables/foshou-short04-cover-ko.png',
   './assets/expressions/base.png',
   './assets/expressions/happy.png',
   './assets/expressions/proud.png',
